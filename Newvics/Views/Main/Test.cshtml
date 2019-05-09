@@ -1,0 +1,57 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>onLine</title>
+    @Styles.Render("~/assets/game/css/base.css")
+    @Styles.Render("~/assets/game/css/onLine.css")
+    @Styles.Render("~/Content/semantic.css")
+    @Styles.Render("~/Content/semantic.min.css")
+    @Scripts.Render("~/assets/game/js/jquery.min.js")
+    @Scripts.Render("~/assets/game/js/onLine.js")
+
+    @*<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/onLine.css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/onLine.js"></script>*@
+    <script type="text/javascript">
+        $(function () {
+            var obj = $(".demo");
+            var size = obj.size();
+            for (var i = 0; i < size; i++) {
+                obj.eq(i).onLine({
+                    regainCanvas: true
+                });
+            }
+        });
+    </script>
+</head>
+<body style="padding-top:100px;padding-left: 100px;">
+    <div id="test2" data-pair=5 class="demo pt10" style="width:620px;float:left;">
+        <div class="show topBottom cb">
+            <div class="tools">
+                <div class="savePair">Save key:value</div>
+                <div class="getPair">Get key:value</div>
+                <div class="goBackBtn">Rollback</div>
+                <div class="resetCanvasBtn">Reset</div>
+            </div>
+            <div class="showtop">
+                <span class="showitem1" data-id="L1">Fielder</span>
+                <span class="showitem1" data-id="L2">Batsman</span>
+                <span class="showitem1" data-id="L3">Wicket-keeper</span>
+                <span class="showitem1" data-id="L4">Bowler</span>
+            </div>
+            <div class="showbottom">
+                <span class="showitem" data-id="R1"><img src="../assets/image/111.jpg" style="width:100px;height:76.3px;" /></span>
+                <span class="showitem" data-id="R2"><img src="../assets/image/112.jpg" style="width:100px;height:76.3px;"/></span>
+                <span class="showitem" data-id="R3"><img src="../assets/image/113.jpg" style="width:100px;height:76.3px;" /></span>
+                <span class="showitem" data-id="R4"><img src="../assets/image/114.jpg" style="width:100px;height:76.3px;" /></span>
+     </div>
+            <!-- -->
+            <canvas class="canvas"></canvas>
+            <canvas class="backcanvas"></canvas>
+        </div>
+    </div>
+
+</body>
+</html>
