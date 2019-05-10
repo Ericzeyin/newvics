@@ -24,19 +24,18 @@ namespace Newvics.Controllers
             return View();
         }
 
-        public ActionResult Footy(/*string[] values,string suburb*/)
+        public ActionResult Footy()
+        { 
+            return View();
+        }
+
+        public ActionResult Footy2()
         {
-            //string searchString = null;
-            //string searchString1 = null;
-            //if (values != null)
-            //{
-            //    searchString = values[0];
-            //    searchString1 = values[1];
-            //}
-            //var pl = GetSuburbData(suburb);
-            //var places = GetSportsData(searchString, searchString1);
-            //ViewData["Pl"] = pl;
-            //ViewData["Places"] = places;
+            return View();
+        }
+
+        public ActionResult Footy3()
+        {
             return View();
         }
 
