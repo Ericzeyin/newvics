@@ -49,24 +49,24 @@
 }
 
 .show .showitem {
-    width: 130px;
-    height: 100px;
+    width: 117px;
+    height: 90px;
     display: block;
-    margin: 10px 0;
-    background: #0CF;
+    margin: 5px 0;
+    background: #0C9;
     border-radius: 15px;
-    padding: 10px;
-    color: #fff;
+    padding: 5px;
+    color:#ff6a00;
 }
 
 .show .showitem1 {
-    width: 130px;
-    height: 60px;
+    width: 117px;
+    height: 90px;
     display: block;
-    margin: 10px 0;
-    background: #0CF;
+    margin: 5px 0;
+    background: #ff0000;
     border-radius: 15px;
-    padding: 10px;
+    padding: 5px;
     color: #fff;
 }
 

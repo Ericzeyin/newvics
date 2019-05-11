@@ -27,34 +27,47 @@
         });
     </script>
 </head>
- <body style="padding-top:100px;padding-left: 100px;">
-        <div id="test2" data-pair=5 class="demo pt10" style="width:620px;float:left;">
-            <div class="show topBottom cb">
-                <div class="tools">
-                    <div class="savePair">Save key:value</div>
-                    <div class="getPair">Get key:value</div>
-                    <div class="goBackBtn">Rollback</div>
-                    <div class="resetCanvasBtn">Reset</div>
+<body style="padding:2%">
+    <div id="start" style="margin-bottom:2%;margin-top:2%">
+        <div class="col offset-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Welcom to Uconnection of cricket</h2>
+                <div class="ui two column stackable center aligned grid">
+                    <div class="middle aligned row">
+                        <div class="column">
+                            <div id="test" data-pair=5 class="demo pt10" style="width:550px;float:left;">
+                                <div class="show cb">
+                                    <div class="tools">
+                                        <div class="savePair" style="color:lightsalmon">Answer</div>
+                                        <div class="getPair" style="color:lightsalmon">Confirm</div>
+                                        <div class="goBackBtn" style="color:lightsalmon">Rollback</div>
+                                        <div class="resetCanvasBtn" style="color:lightsalmon">Reset</div>
+                                    </div>
+                                    <div class="showleft">
+                                        <span class="showitem container text-center" data-id="L1">Fielder</span>
+                                        <span class="showitem container text-center" data-id="L2">Batsman</span>
+                                        <span class="showitem container text-center" data-id="L3">Wicket-keeper</span>
+                                        <span class="showitem container text-center" data-id="L4">Bowler</span>
+                                    </div>
+                                    <div class="showright">
+                                        <span class="showitem container text-center" data-id="R1"><img src="../assets/image/111.jpg" style="width:100px;height:76.3px;" /></span>
+                                        <span class="showitem container text-center" data-id="R2"><img src="../assets/image/112.jpg" style="width:100px;height:76.3px;" /></span>
+                                        <span class="showitem container text-center" data-id="R3"><img src="../assets/image/113.jpg" style="width:100px;height:76.3px;" /></span>
+                                        <span class="showitem container text-center" data-id="R4"><img src="../assets/image/114.jpg" style="width:100px;height:76.3px;" /></span>
+                                    </div>
+                                    <canvas class="canvas"></canvas>
+                                    <canvas class="backcanvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div calss="container text-center">
+                                <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="showtop">
-                    <span class="showitem1" data-id="L1">Fielder</span>
-                    <span class="showitem1" data-id="L2">Batsman</span>
-                    <span class="showitem1" data-id="L3">Wicket-keeper</span>
-                    <span class="showitem1" data-id="L4">Bowler</span>
-                </div>
-                <div class="showbottom">
-                    <span class="showitem" data-id="R1"><img src="../assets/image/111.jpg" style="width:100px;height:76.3px;" /></span>
-                    <span class="showitem" data-id="R2"><img src="../assets/image/112.jpg" style="width:100px;height:76.3px;" /></span>
-                    <span class="showitem" data-id="R3"><img src="../assets/image/113.jpg" style="width:100px;height:76.3px;" /></span>
-                    <span class="showitem" data-id="R4"><img src="../assets/image/114.jpg" style="width:100px;height:76.3px;" /></span>
-                </div>
-                <!-- -->
-                <canvas class="canvas"></canvas>
-                <canvas class="backcanvas"></canvas>
             </div>
         </div>
-
-    </body>
-    @Scripts.Render("~/assets/js/creative.js")
+</body>
 </html>
 
