@@ -54,11 +54,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Sports", "Main")">Sports</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Footy", "Main")">Footy</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Basketball", "Main")">Tennis</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Footy", "Main")">Footy</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
 
                 </ul>
             </div>
@@ -69,7 +69,7 @@
             <div class="intro">
                 <iframe src="https://www.youtube.com/embed/XMZYZcoAcU0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
-            <div class="row people">
+            <div class="row people" style="margin-top:1%;padding-top:1%">
                 <div class="box">
                     <h2 class="text-center">What is Australian Footy?</h2>
                     <h3 class="description">The game’s objective is to move the ball downfield and kick the ball through the team’s goal. The main way to score points is by kicking the ball between the two tall goal posts. The team with the higher total score at the end of the match wins unless either a draw is declared or a tie-break is used.</h3>
@@ -77,39 +77,6 @@
             </div>
         </div>
     </section>
-    @*<div class="header-blue" style="height:82%">
-        <div class="header-blue">*@
-    @*<div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-5 offset-lg-1" style="margin-top:75px;margin-left:20px;margin-right:20px;">*@
-    @*<h1 style="margin-top:25px;margin-bottom:25px;color:rgb(252,252,252);">Footy, most popular sports!</h1>*@
-    @*<p style="color:rgb(255,253,253);margin-bottom:25px;">Mauris egestas tellus non ex condimentum, ac ullamcorper sapien dictum. Nam consequat neque quis sapien viverra convallis. In non tempus lorem. </p>*@
-    @*<iframe src="https://www.youtube.com/embed/XMZYZcoAcU0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" width="100%" height="360" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                </div>
-            </div>
-        </div>*@
-    @*<div class="container">
-        <div class="row">*@
-    @*<div class="ui two column grid">
-            <div class="middle aligned row">
-                <div class="column">
-                    <div class="col-md-6 col-lg-5 offset-lg-1" style="margin-top:75px;margin-left:20px;margin-right:20px;">
-                        <iframe src="https://www.youtube.com/embed/VBHHP47VFEg?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" width="100%" height="360" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-                    </div>
-                </div>
-                <div class="column">
-                    <div calss="container text-center">
-                        <h2 style="color:rgb(255,253,253)">Australian Football is widely known as Footy</h2>
-                        <h4 style="color:rgb(255,253,253);margin-bottom:25px;">The game’s objective is to move the ball downfield and kick the ball through the team’s goal. The main way to score points is by kicking the ball between the two tall goal posts. The team with the higher total score at the end of the match wins unless either a draw is declared or a tie-break is used.</h4>
-                    </div>
-                </div>
-            </div>
-        </div>*@
-    @*</div>
-                </div>
-            </div>
-        </div>*@
-
 
     <div class="highlight-clean" style="background-color:azure">
         <div class="container">
@@ -170,13 +137,13 @@
         </div>
     </div>
 
-    <div class="highlight-clean" style="padding-top:2%;padding-bottom:0px;margin-bottom:0px">
+    <div id="quiz" class="highlight-clean" style="padding-top:2%;padding-bottom:0px;margin-bottom:0px">
         <div class="container">
             <div class="intro">
                 <div>
                     <h2 class="text-center">Do you want to know which team you might be with?</h2>
                 </div>
-                <div class="buttons"><a class="btn btn-primary" role="button" href="#">Do quiz</a></div>
+                <div class="buttons"><a class="btn btn-primary" role="button" href="@Url.Action("Question", "Main")">Play quiz</a></div>
             </div>
         </div>
     </div>
@@ -190,56 +157,86 @@
                 <div class="card-header">
                     <ul class="nav center nav-tabs card-header-tabs">
                         <li class="nav-item"><a class="nav-link active" href="#"><h1>Basic skill</h1></a></li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Footy2", "Main")#part1"><h1>Team skill</h1></a></li>
+                        @*<li class="nav-item"><a class="nav-link" href="@Url.Action("Footy2", "Main")#part1"><h1>Team skill</h1></a></li>*@
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Footy3", "Main")#part1"><h1>Watch the Professionals</h1></a></li>
                     </ul>
                 </div>
                 <div id="c1" class="card-body">
                     <div class="projects-horizontal">
                         <div class="container">
-                            <div class="row projects">
-                                    <div class="ui two column stackable center aligned grid">
-                                        <div class="middle aligned row">
-                                            <div class="six wide column">
-                                                <img class="img-fluid" src="../assets/image/u1.jpg" />
-                                            </div>
-                                            <div class="Ten wide column">
-                                                    <img class="img-fluid" src="../assets/image/a.jpg" />                                           
-                                            </div>
-                                        </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5"><img class="rounded-circle img-fluid" src="../assets/image/u1.jpg"></div>
                                     </div>
-                                    <div class="ui two column stackable center aligned grid">
-                                        <div class="middle aligned row">
-                                            <div class="six wide column">
-                                                <img class="img-fluid" src="../assets/image/u2.jpg" />
-                                            </div>
-                                            <div class="Ten wide column">
-                                                <img class="img-fluid" src="../assets/image/b.jpg" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ui two column stackable center aligned grid">
-                                        <div class="middle aligned row">
-                                            <div class="six wide column">
-                                                <img class="img-fluid" src="../assets/image/u2.jpg" />
-                                            </div>
-                                            <div class="Ten wide column">
-                                                <img class="img-fluid" src="../assets/image/c.png" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ui two column stackable center aligned grid">
-                                        <div class="middle aligned row">
-                                            <div class="six wide column">
-                                                <img class="img-fluid" src="../assets/image/u3.jpg" />
-                                            </div>
-                                            <div class="Ten wide column">
-                                                <img class="img-fluid" src="../assets/image/d.png" />
-                                            </div>
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5">
+                                            <h1>Kicking</h1>
+                                            <h4>
+                                                • Line up your body with your target.<br>
+                                                • Have your head slightly bent over the ball.<br>
+                                                • Hold the ball over the thigh of the kicking leg.<br>
+                                                • Guide the ball down with one hand.<br>
+                                                • Point your toes at your target, see the ball hit the foot.<br>
+                                                • Follow through straight towards the target.
+                                            </h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="rounded-circle img-fluid" src="../assets/image/u4.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h1>Handball</h1>
+                                            <h4>
+                                                • The ball must be gripped firmly with the platform hand and hit with a clenched fist.<br>
+                                                • For a right-handed handball, the left foot is forward, and vice versa for a left-handed handball.<br>
+                                                • After contact is made with the ball, the fist remains on the platform hand — "catch the fist".
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5"><img class="rounded-circle img-fluid" src="../assets/image/u2.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5">
+                                            <h1>Marking</h1>
+                                            <h4>
+                                                • Practise in a standing position extending to a run-in and jump.<br>
+                                                • Practise without opposition and then extend the practise to include an opponent.<br>
+                                                • Hit with the palm and then later use the fist.<br>
+                                                • Attempt two-handed hitting and then progress to one-handed palming.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="rounded-circle img-fluid" src="../assets/image/u3.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h1>Checking skill</h1>
+                                            <h4>
+                                                • Begin with the opponent stationary and the tackler walking in. <br>
+                                                • Extend to the tackler jogging in. <br>
+                                                • Players may be tackled below the shoulders and above the knees (when in possession of the ball).
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -724,7 +721,7 @@
                 </div>
                 <div class="col-md-4">
                     <h4 class="text-uppercase mb-4">About Us</h4>
-                    <p class="lead mb-0"><span>DVoyagers.&nbsp;</span></p>
+                    <p class="lead mb-0"><span><a href="https://mahara.infotech.monash.edu.au/mahara/view/view.php?id=28236" target="_blank">D-Voyagers.&nbsp;</a></span></p>
                 </div>
             </div>
         </div>
@@ -841,12 +838,19 @@
 
                         var lat = place.geometry.location.lat
                         var lng = place.geometry.location.lng
-                        var url1 = 'https://maps.google.com/?ll='
+                        //var url1 = 'https://maps.google.com/?ll='
+                        var url1 = 'http://www.google.com/maps/place/'
                         var url = url1 + lat + ',' + lng
+                        var address = place.vicinity
 
                         a.setAttribute('href', url)
                         a.setAttribute('target', '_blank')
                         box.appendChild(a)
+
+                        const h4 = document.createElement('h4')
+                        var text = 'Address:' + address
+                        h4.textContent = text
+                        box.appendChild(h4)
 
                         const h3 = document.createElement('h3')
                         h3.setAttribute('class', 'header')

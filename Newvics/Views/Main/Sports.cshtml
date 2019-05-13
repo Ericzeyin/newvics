@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-car.css" />
     @Styles.Render("~/Content/semantic.css")
     @Styles.Render("~/Content/semantic.min.css")
-    @Styles.Render("~/assets/css/Sports-StyleSheet")
+    @Styles.Render("~/assets/css/Sports-StyleSheet.css")
 
     <style>
         .odometer {
@@ -54,9 +54,9 @@
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Footy", "Main")">Footy</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Footy", "Main")">Cricket</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Tennis</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
                         @*<li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>*@
                     </ul>
                 </div>
@@ -78,142 +78,115 @@
 
         <section style="padding-bottom:5%;padding-top:5%;background-color:aliceblue">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Sports in Victoria</h2>
-                        <hr class="my-4">
-                    </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sports in Victoria</h2>
+                    <hr class="my-4">
                 </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 center-block text-center">
-                        <div class="mx-auto service-box mt-5">
-                            @*<i class="fa fa-diamond fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>*@
-                            <h2 id="odometer1" class="odometer">111</h2>
-                            <p class="text-muted mb-0">Teenagers choose: </p>
-                            <h3 class="mb-3">Footy</h3>
-                            <div class="hovereffect">
-                                <img class="img-responsive" src="../assets/img/thumbnails/footy.jpg" width="270px" height="200px">
-                                <div class="overlay">
-                                    <h2>Sports</h2>
-                                    <a class="info" href="#">Explore</a>
-                                </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5">
+                        <h2 id="odometer1" class="odometer">111</h2>
+                        <p class="text-muted mb-0">Teenagers choose: </p>
+                        <h3 class="mb-3">Footy</h3>
+                        <div class="hovereffect">
+                            <img class="img-fluid" src="../assets/img/thumbnails/footy.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Footy</h2>
+                                <a class="info" href="@Url.Action("Footy", "Main")">Explore</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 text-center">
-                        <div class="mx-auto service-box mt-5">
-                            @*<i class="fa fa-paper-plane fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200" data-aos-once="true"></i>*@
-                            <h2 id="odometer2" class="odometer">111</h2>
-                            <p class="text-muted mb-0">Teenagers choose: </p>
-                            <h3 class="mb-3">Cricket</h3>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5">
+                        <h2 id="odometer2" class="odometer">111</h2>
+                        <p class="text-muted mb-0">Teenagers choose: </p>
+                        <h3 class="mb-3">Cricket</h3>
+                        <div class="hovereffect">
+                            <img class="img-fluid" src="../assets/img/thumbnails/craket.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Cricket</h2>
+                                <a class="info" href="@Url.Action("Cricket", "Main")">Explore</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 text-center">
-                        <div class="mx-auto service-box mt-5">
-                            @*<i class="fa fa-newspaper-o fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="400" data-aos-once="true"></i>*@
-                            <h2 id="odometer3" class="odometer">111</h2>
-                            <p class="text-muted mb-0">Teenagers choose: </p>
-                            <h3 class="mb-3">Basketball</h3>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5">
+                       <h2 id="odometer3" class="odometer">111</h2>
+                        <p class="text-muted mb-0">Teenagers choose: </p>
+                        <h3 class="mb-3">Basketball</h3>
+                        <div class="hovereffect">
+                            <img class="img-fluid" src="../assets/img/thumbnails/basketball.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Basketball</h2>
+                                <a class="info" href="@Url.Action("Basketball", "Main")">Explore</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 text-center">
-                        <div class="mx-auto service-box mt-5">
-                            @*<i class="fa fa-heart fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="200" data-aos-delay="600" data-aos-once="true"></i>*@
-                            <h2 id="odometer4" class="odometer">111</h2>
-                            <p class="text-muted mb-0">Teenagers choose: </p>
-                            <h3 class="mb-3">Tennis</h3>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center">
+                    <div class="mx-auto service-box mt-5">
+                        <h2 id="odometer4" class="odometer">111</h2>
+                        <p class="text-muted mb-0">Teenagers choose: </p>
+                        <h3 class="mb-3">Tennis</h3>
+                        <div class="hovereffect">
+                            <img class="img-fluid" src="../assets/img/thumbnails/tennis.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Tennis</h2>
+                                <a class="info" href="@Url.Action("Tennis", "Main")">Explore</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+      
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="hovereffect">
-                            <img class="img-responsive" src="../assets/img/thumbnails/footy.jpg" width="270px" height="200px">
-                            <div class="overlay">
-                                <h2>Sports</h2>
-                                <a class="info" href="#">Explore</a>
-                            </div>
+            @*<div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="../assets/img/thumbnails/footy.jpg" width="270px" height="200px">
+                        <div class="overlay">
+                            <h2>Sports</h2>
+                            <a class="info" href="#">Explore</a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="hovereffect">
-                            <img class="img-responsive" src="../assets/img/thumbnails/craket.jpg" width="270px" height="200px">
-                            <div class="overlay">
-                                <h2>Sports</h2>
-                                <a class="info" href="#">Explore</a>
-                            </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="../assets/img/thumbnails/craket.jpg" width="270px" height="200px">
+                        <div class="overlay">
+                            <h2>Sports</h2>
+                            <a class="info" href="#">Explore</a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="hovereffect">
-                            <img class="img-responsive" src="../assets/img/thumbnails/basketball.jpg" width="270px" height="200px">
-                            <div class="overlay">
-                                <h2>Sports</h2>
-                                <a class="info" href="#">Explore</a>
-                            </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="../assets/img/thumbnails/basketball.jpg" width="270px" height="200px">
+                        <div class="overlay">
+                            <h2>Sports</h2>
+                            <a class="info" href="#">Explore</a>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 col-lg-3">
-                        <div class="hovereffect">
-                            <img class="img-responsive" src="../assets/img/thumbnails/tennis.jpg" width="270px" height="200px">
-                            <div class="overlay">
-                                <h2>Sports</h2>
-                                <a class="info" href="#">Explore</a>
-                            </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="../assets/img/thumbnails/tennis.jpg" width="270px" height="200px">
+                        <div class="overlay">
+                            <h2>Sports</h2>
+                            <a class="info" href="#">Explore</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="portfolio" style="padding-bottom:5%;padding-top:5%">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Choose sports</h2>
-                        <hr class="my-4">
-                    </div>
-                </div>
-            </div>
-            <div style="margin-left:20%;margin-right:20%">
-            <div class="container-fluid p-0">
-                <div class="row no-gutters popup-gallery">
-                    <div class="col-sm-6 col-lg-6">
-                        <a class="portfolio-box" href="@Url.Action("Footy", "Main")">
-                            <img class="img-fluid" src="../assets/img/thumbnails/footy.jpg">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        <h2>Footy</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-lg-6">
-                        <a class="portfolio-box" href="@Url.Action("Footy", "Main")">
-                            <img class="img-fluid" src="../assets/img/thumbnails/craket.jpg">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded">
-                                        <h2>Outdoor criket</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-lg-6"><a class="portfolio-box" href="@Url.Action("Footy", "Main")"><img class="img-fluid" src="../assets/img/thumbnails/basketball.jpg"><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><h2>Basketball</h2></div></div></div></a></div>
-                    <div class="col-sm-6 col-lg-6"><a class="portfolio-box" href="@Url.Action("Footy", "Main")"><img class="img-fluid" src="../assets/img/thumbnails/tennis.jpg"><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><h2>Tennis</h2></div></div></div></a></div>
-                    @*<div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="../assets/img/fullsize/5.jpg"><img class="img-fluid" src="../assets/img/thumbnails/5.jpg"><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>
-                    <div class="col-sm-6 col-lg-4"><a class="portfolio-box" href="../assets/img/fullsize/6.jpg"><img class="img-fluid" src="../assets/img/thumbnails/6.jpg"><div class="portfolio-box-caption"><div class="portfolio-box-caption-content"><div class="project-category text-faded"><span>Category</span></div><div class="project-name"><span>Project Name</span></div></div></div></a></div>*@
-                </div>
-            </div>
-            </div>
+        </div>*@
         </section>
 
         <footer class="footer text-center">
@@ -234,7 +207,7 @@
                     </div>
                     <div class="col-md-4">
                         <h4 class="text-uppercase mb-4">About Us</h4>
-                        <p class="lead mb-0"><span>DVoyagers.&nbsp;</span></p>
+                        <p class="lead mb-0"><span><a href="https://mahara.infotech.monash.edu.au/mahara/view/view.php?id=28236" target="_blank">D-Voyagers.&nbsp;</a></span></p>
                     </div>
                 </div>
             </div>
@@ -259,6 +232,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
         @Scripts.Render("~/assets/js/Simple-Slider.js")
-        <script src="http://github.hubspot.com/odometer/odometer.js"></script>
+        <script src="https://github.hubspot.com/odometer/odometer.js"></script>
     </body>
 </html>

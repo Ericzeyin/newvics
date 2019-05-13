@@ -411,6 +411,10 @@
             goBack();
         });
 
+        function createContent() {
+
+        }
+
         //获取连线题对应的key-value
         function getListPair() {
             var index;
@@ -457,7 +461,12 @@
                 idAttrRight[2] = "L3 : R2"
                 idAttrRight[3] = "L4 : R1"
 
-                if (!(idAttrRight[0] == idAttr[0] && idAttrRight[1] == idAttr[1] && idAttrRight[2] == idAttr[2] && idAttrRight[3] == idAttr[3])) {
+                     
+
+                if (!((idAttr[0] == idAttrRight[0] || idAttr[0] == idAttrRight[1] || idAttr[0] == idAttrRight[2] || idAttr[0] == idAttrRight[3])
+                    && (idAttr[1] == idAttrRight[0] || idAttr[1] == idAttrRight[1] || idAttr[1] == idAttrRight[2] || idAttr[1] == idAttrRight[3])
+                    && (idAttr[2] == idAttrRight[0] || idAttr[2] == idAttrRight[1] || idAttr[2] == idAttrRight[2] || idAttr[2] == idAttrRight[3])
+                    && (idAttr[3] == idAttrRight[0] || idAttr[3] == idAttrRight[1] || idAttr[3] == idAttrRight[2] || idAttr[3] == idAttrRight[3]))) {
                     alert("Sorry, your don't match correctly!");
                 } else {
                     alert("Good job!");

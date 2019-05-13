@@ -2,7 +2,7 @@
     position: relative;
     width: 500px;
     margin: 40px 20px;
-    border: 10px solid #CCC;
+    border: 10px solid #fff;
     cursor: pointer;
 }
 
@@ -56,7 +56,8 @@
     background: #0C9;
     border-radius: 15px;
     padding: 5px;
-    color:#ff6a00;
+    color: white;
+    /*font-size: medium;*/
 }
 
 .show .showitem1 {
@@ -91,7 +92,7 @@
     position: absolute;
     top: -50px;
     left: -10px;
-    border: 10px solid #CCC;
+    border: 10px solid #fff;
 }
 
     .tools div {

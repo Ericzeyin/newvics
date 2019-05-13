@@ -27,26 +27,64 @@
         });
     </script>
 </head>
-<body style="padding:2%">
-    <div id="start" style="margin-bottom:2%;margin-top:2%">
-        <div class="col offset-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Welcom to Uconnection of cricket</h2>
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>Newvics</a>
+            <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
+                    type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-align-justify"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Footy", "Main")">Footy</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="padding:2%">
+        <div id="start" style="margin-bottom:2%;margin-top:2%">
+            <div class="col offset-lg-8 mx-auto text-center">
                 <div class="ui two column stackable center aligned grid">
                     <div class="middle aligned row">
                         <div class="column">
-                            <div id="test" data-pair=5 class="demo pt10" style="width:550px;float:left;">
+                            <div id="test" data-pair=5 class="demo pt10" style="float:left;">
                                 <div class="show cb">
-                                    <div class="tools">
-                                        <div class="savePair" style="color:lightsalmon">Answer</div>
-                                        <div class="getPair" style="color:lightsalmon">Confirm</div>
-                                        <div class="goBackBtn" style="color:lightsalmon">Rollback</div>
-                                        <div class="resetCanvasBtn" style="color:lightsalmon">Reset</div>
+                                    <div class="container" style="margin-bottom:1%;padding-bottom:1%">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-3 text-center">
+                                                <div class="mx-auto service-box mt-5">
+                                                    <div class="savePair" style="color:lightsalmon">Answer</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3 text-center">
+                                                <div class="mx-auto service-box mt-5">
+                                                    <div class="getPair" style="color:lightsalmon">Confirm</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3 text-center">
+                                                <div class="mx-auto service-box mt-5">
+                                                    <div class="goBackBtn" style="color:lightsalmon">Rollback</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3 text-center">
+                                                <div class="mx-auto service-box mt-5">
+                                                    <div class="resetCanvasBtn" style="color:lightsalmon">Reset</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div class="showleft">
-                                        <span class="showitem container text-center" data-id="L1">Fielder</span>
-                                        <span class="showitem container text-center" data-id="L2">Batsman</span>
-                                        <span class="showitem container text-center" data-id="L3">Wicket-keeper</span>
-                                        <span class="showitem container text-center" data-id="L4">Bowler</span>
+                                        <span class="showitem container text-center" style="text-align:center;display:inline-block" data-id="L1">Fielder</span>
+                                        <span class="showitem container text-center" style="text-align:center;display:inline-block" data-id="L2">Batsman</span>
+                                        <span class="showitem container text-center" style="text-align:center;display:inline-block" data-id="L3">Wicket-keeper</span>
+                                        <span class="showitem container text-center" style="text-align:center;display:inline-block" data-id="L4">Bowler</span>
                                     </div>
                                     <div class="showright">
                                         <span class="showitem container text-center" data-id="R1"><img src="../assets/image/111.jpg" style="width:100px;height:76.3px;" /></span>
@@ -60,14 +98,35 @@
                             </div>
                         </div>
                         <div class="column">
-                            <div calss="container text-center">
-                                <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
+                            <div calss="container" style="text-align:left">
+                                <h3>Batsman</h3>
+                                <p>Batsman is a player who bats and tries to hit the ball and get runs. The batsman can be aggressive or defensive . In t20's or ODI's the batsman mostly play's aggressive and in test matches they mostly play defensive.</p>
+                                <h3>Bowler</h3>
+                                <p>
+                                    Bowler is a player who bowls and tries to get the batsman out . A bowler can be spinner, fast bowler, or
+                                    fast-mid bowler . There are many types bowling places like Yorker, full length, Good length, short length.
+                                </p>
+                                <h3>Fielder</h3>
+                                <p>Fielder is a player who fields and tries to save the ball from the boundary . Fielders have many places to field like mid-off, mid-on, 1st clip, and many more . If any of the fielder gets an injury then another fielder comes who is not playing and take's his place . That fielder is called sub-fielder. </p>
+                                <h3>Wicket-keeper</h3>
+                                <p>Wicket-keeper is a player who stands behind the wicket's and tries to catch the ball if the ball misses the stumps and come's back . Most wicket-keeper's mostly wicket-keep and bat . The wicket- keeper stands at different places like for spinners they stand at the front and for fast bowler they back. </p>
                             </div>
+
+                            @*<div calss="container text-center">
+                                    <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
+                                </div>*@
+                        </div>
+                    </div>
+                </div>
+                <div calss="container">
+                    <div class="row">
+                        <div class="col offset-lg-8 mx-auto text-center">
+                            <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-</body>
+    </div>
+    </body>
 </html>
-

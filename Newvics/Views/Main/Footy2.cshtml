@@ -58,7 +58,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Footy", "Main")">Footy</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Basketball", "Main")">Tennis</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
 
                 </ul>
             </div>
@@ -176,7 +176,7 @@
                 <div>
                     <h2 class="text-center">Do you want to know which team you might be with?</h2>
                 </div>
-                <div class="buttons"><a class="btn btn-primary" role="button" href="#">Do quiz</a></div>
+                <div class="buttons"><a class="btn btn-primary" role="button" href="@Url.Action("Question", "Main")">Do quiz</a></div>
             </div>
         </div>
     </div>
@@ -197,38 +197,62 @@
                 <div id="c1" class="card-body">
                     <div class="projects-horizontal">
                         <div class="container">
-                            <div class="row projects">
-                                <div class="ui two column stackable center aligned grid">
-                                    <div class="middle aligned row">
-                                        <div class="six wide column">
-                                            <img class="img-fluid" src="../assets/image/b1.jpg" />
-                                        </div>
-                                        <div class="Ten wide column">
-                                            <img class="img-fluid" src="../assets/image/a1.png" />
-                                        </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="img-fluid" src="../assets/image/b1.jpg"></div>
                                     </div>
-                                </div>
-                                <div class="ui two column stackable center aligned grid">
-                                    <div class="middle aligned row">
-                                        <div class="six wide column">
-                                            <img class="img-fluid" src="../assets/image/b2.jpg" />
-                                        </div>
-                                        <div class="Ten wide column">
-                                            <img class="img-fluid" src="../assets/image/a2.png" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ui two column stackable center aligned grid">
-                                    <div class="middle aligned row">
-                                        <div class="six wide column">
-                                            <img class="img-fluid" src="../assets/image/b3.jpg" />
-                                        </div>
-                                        <div class="Ten wide column">
-                                            <img class="img-fluid" src="../assets/image/a3.png" />
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h2>How to do: </h2>
+                                            <p>
+                                                • Keep your promises.<br>
+                                                • Don't overpromise<br>
+                                                • Manage expectation<br>
+                                                • Whatever you do, do it well<br>
+                                                • Finish what you start<br>
+                                                • Don’t collapse in emergencies
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="img-fluid" src="../assets/image/b2.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h2>How to do: </h2>
+                                            <p>
+                                                • Learn to listen<br>
+                                                • Pay attention to body language<br>
+                                                • Observe how others communicate in different contexts<br>
+                                                • Use action verbs and confident language<br>
+                                                • Ask Question
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="img-fluid" src="../assets/image/b3.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h2>How to do: </h2>
+                                            <p>
+                                                • Whatever your strengths, you have something valuable to offer<br>
+                                                • Find a role within your team that allows you to do what you do well. This will help you make a meaningful contribution – and increase your chances of doing a great job.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -714,7 +738,7 @@
                 </div>
                 <div class="col-md-4">
                     <h4 class="text-uppercase mb-4">About Us</h4>
-                    <p class="lead mb-0"><span>DVoyagers.&nbsp;</span></p>
+                    <p class="lead mb-0"><span>D-Voyagers.&nbsp;</span></p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,297 @@
+﻿@Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
+@Styles.Render("~/assets/fonts/font-awesome.min.css")
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+@Styles.Render("~/assets/css/Highlight-Clean.css")
+@Styles.Render("~/assets/css/NMDIGbanner.css")
+@Styles.Render("~/assets/css/Team-Boxed.css")
+@Styles.Render("~/assets/css/styles.css")
+@Styles.Render("~/assets/css/video-background.css")
+@Styles.Render("~/Content/semantic.css")
+@Styles.Render("~/Content/semantic.min.css")
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col offset-lg-8 mx-auto text-center">
+                <div class="text-center" style="padding-bottom:2%;margin-bottom:2%">
+                    <select class="ui search selection dropdown" id="select1" name="level">
+                        <option value="" disabled selected>Select your level</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                    <select class="ui search selection dropdown" id="select2" name="gender">
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="Boy">Boy</option>
+                        <option value="Girl">Girl</option>
+                    </select>
+                    <div>
+                        <div class="text-center" style="margin-top:1%;padding-top:1%">
+                            <input type="submit" value="Get Racket" class="btn btn-primary" onclick="GetRacket()">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                        <div class="ui placeholder segment">
+                            <div class="ui two column stackable center aligned grid">
+                                <div id="result1" class="middle aligned row">
+                                    @*<div class="six wide column">
+                                        <img class="img-fluid" src="../assets/img/image2.jpg" />
+                                    </div>
+                                    <div class="column">
+                                        <div calss="container text-center">
+                                            <h2 class="mb-4">Are you interested?</h2>
+                                        </div>
+                                    </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+</section>
+
+<script>
+    function GetRacket() {
+
+        const root = document.getElementById('result1')
+
+        while (root.hasChildNodes()) //delete all child nodes of app
+        {
+            root.removeChild(root.firstChild);
+        }
+
+        var dd = document.getElementById("select1");
+        var level = dd.options[dd.selectedIndex].value;
+
+        var ee = document.getElementById("select2");
+        var gender = ee.options[ee.selectedIndex].value;
+
+        var item = level + "+" + gender;
+        var result = [];
+        result[0] = "Beginner+Boy"
+        result[1] = "Intermediate+Boy"
+        result[2] = "Advanced+Boy"
+        result[3] = "Beginner+Girl"
+        result[4] = "Intermediate+Girl"
+        result[5] = "Advanced+Girl"
+
+        if (level != "" && gender != "") {
+            if (item == result[0]) {
+                const racket = document.createElement('div')
+                racket.setAttribute('class', 'column')
+                root.appendChild(racket)
+
+                const img = document.createElement('img')
+                img.setAttribute('class', 'img-fluid')
+                img.setAttribute('src', '../assets/image/tennis1.png')
+
+                racket.appendChild(img)
+
+                const detail = document.createElement('div')
+                detail.setAttribute('class', 'column')
+                root.appendChild(detail)
+
+                const information = document.createElement('div')
+                information.setAttribute('class', 'container text-center')
+                detail.appendChild(information)
+
+                const hh = document.createElement('h4')
+                hh.textContent = "Hand Size: Oversize(>105 SQ.IN.)"
+                information.appendChild(hh)
+
+                const hh2 = document.createElement('h4')
+                hh2.textContent = "Weight: Light(<10.5 OZ.)"
+                information.appendChild(hh2)
+
+                const hh3 = document.createElement('h4')
+                hh3.textContent = "Stiffness: High Stiffnes"
+                information.appendChild(hh3)
+
+                const hh4 = document.createElement('h4')
+                hh4.textContent = "Balance: Head Heavey"
+                information.appendChild(hh4)
+            } else if (item == result[1]) {
+                const racket = document.createElement('div')
+                racket.setAttribute('class', 'column')
+                root.appendChild(racket)
+
+                const img = document.createElement('img')
+                img.setAttribute('class', 'img-fluid')
+                img.setAttribute('src', '../assets/image/tennis2.jpg')
+
+                racket.appendChild(img)
+
+                const detail = document.createElement('div')
+                detail.setAttribute('class', 'column')
+                root.appendChild(detail)
+
+                const information = document.createElement('div')
+                information.setAttribute('class', 'container text-center')
+                detail.appendChild(information)
+
+                const hh = document.createElement('h4')
+                hh.textContent = "Hand Size: Mid-Plus(95-104 SQ.IN.)"
+                information.appendChild(hh)
+
+                const hh2 = document.createElement('h4')
+                hh2.textContent = "Weight: Mid(10.6-11.7 OZ.)"
+                information.appendChild(hh2)
+
+                const hh3 = document.createElement('h4')
+                hh3.textContent = "Stiffness: Mid Stiffnes"
+                information.appendChild(hh3)
+
+                const hh4 = document.createElement('h4')
+                hh4.textContent = "Balance: Even"
+                information.appendChild(hh4)
+            } else if (item == result[2]) {
+                const racket = document.createElement('div')
+                racket.setAttribute('class', 'column')
+                root.appendChild(racket)
+
+                const img = document.createElement('img')
+                img.setAttribute('class', 'img-fluid')
+                img.setAttribute('src', '../assets/image/tennis3.jpg')
+
+                racket.appendChild(img)
+
+                const detail = document.createElement('div')
+                detail.setAttribute('class', 'column')
+                root.appendChild(detail)
+
+                const information = document.createElement('div')
+                information.setAttribute('class', 'container text-center')
+                detail.appendChild(information)
+
+                const hh = document.createElement('h4')
+                hh.textContent = "Hand Size: Mid(<94 SQ.IN.)"
+                information.appendChild(hh)
+
+                const hh2 = document.createElement('h4')
+                hh2.textContent = "Weight: Heavy(>11.7 OZ.)"
+                information.appendChild(hh2)
+
+                const hh3 = document.createElement('h4')
+                hh3.textContent = "Stiffness: Low Stiffnes"
+                information.appendChild(hh3)
+
+                const hh4 = document.createElement('h4')
+                hh4.textContent = "Balance: Head Light"
+                information.appendChild(hh4)
+            } else if (item == result[3]) {
+                const racket = document.createElement('div')
+                racket.setAttribute('class', 'column')
+                root.appendChild(racket)
+
+                const img = document.createElement('img')
+                img.setAttribute('class', 'img-fluid')
+                img.setAttribute('src', '../assets/image/tennis4.jpg')
+
+                racket.appendChild(img)
+
+                const detail = document.createElement('div')
+                detail.setAttribute('class', 'column')
+                root.appendChild(detail)
+
+                const information = document.createElement('div')
+                information.setAttribute('class', 'container text-center')
+                detail.appendChild(information)
+
+                const hh = document.createElement('h4')
+                hh.textContent = "Hand Size: Oversize(>105 SQ.IN.)"
+                information.appendChild(hh)
+
+                const hh2 = document.createElement('h4')
+                hh2.textContent = "Weight: Light(<10.5 OZ.)"
+                information.appendChild(hh2)
+
+                const hh3 = document.createElement('h4')
+                hh3.textContent = "Stiffness: High Stiffnes"
+                information.appendChild(hh3)
+
+                const hh4 = document.createElement('h4')
+                hh4.textContent = "Balance: Head Heavey"
+                information.appendChild(hh4)
+            } else if (item == result[4]) {
+                const racket = document.createElement('div')
+                racket.setAttribute('class', 'column')
+                root.appendChild(racket)
+
+                const img = document.createElement('img')
+                img.setAttribute('class', 'img-fluid')
+                img.setAttribute('src', '../assets/image/tennis5.jpg')
+
+                racket.appendChild(img)
+
+                const detail = document.createElement('div')
+                detail.setAttribute('class', 'column')
+                root.appendChild(detail)
+
+                const information = document.createElement('div')
+                information.setAttribute('class', 'container text-center')
+                detail.appendChild(information)
+
+                const hh = document.createElement('h4')
+                hh.textContent = "Hand Size: Mid-Plus(95-104 SQ.IN.)"
+                information.appendChild(hh)
+
+                const hh2 = document.createElement('h4')
+                hh2.textContent = "Weight: Mid(10.6-11.7 OZ.)"
+                information.appendChild(hh2)
+
+                const hh3 = document.createElement('h4')
+                hh3.textContent = "Stiffness: Mid Stiffnes"
+                information.appendChild(hh3)
+
+                const hh4 = document.createElement('h4')
+                hh4.textContent = "Balance: Even"
+                information.appendChild(hh4)
+            } else if (item == result[5]) {
+                const racket = document.createElement('div')
+                racket.setAttribute('class', 'column')
+                root.appendChild(racket)
+
+                const img = document.createElement('img')
+                img.setAttribute('class', 'img-fluid')
+                img.setAttribute('src', '../assets/image/tennis6.jpg')
+
+                racket.appendChild(img)
+
+                const detail = document.createElement('div')
+                detail.setAttribute('class', 'column')
+                root.appendChild(detail)
+
+                const information = document.createElement('div')
+                information.setAttribute('class', 'container text-center')
+                detail.appendChild(information)
+
+                const hh = document.createElement('h4')
+                hh.textContent = "Hand Size: Mid(<94 SQ.IN.)"
+                information.appendChild(hh)
+
+                const hh2 = document.createElement('h4')
+                hh2.textContent = "Weight: Heavy(>11.7 OZ.)"
+                information.appendChild(hh2)
+
+                const hh3 = document.createElement('h4')
+                hh3.textContent = "Stiffness: Low Stiffnes"
+                information.appendChild(hh3)
+
+                const hh4 = document.createElement('h4')
+                hh4.textContent = "Balance: Head Light"
+                information.appendChild(hh4)
+            } 
+            
+        } else {
+            const errorMessage = document.createElement('marquee')
+            errorMessage.textContent = `Please complete your selection`
+            root.appendChild(errorMessage)
+        }
+    }
+</script>

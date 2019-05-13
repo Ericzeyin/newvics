@@ -58,7 +58,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Footy", "Main")">Footy</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Basketball", "Main")">Tennis</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
 
                 </ul>
             </div>
@@ -69,7 +69,7 @@
             <div class="intro">
                 <iframe src="https://www.youtube.com/embed/XMZYZcoAcU0?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
-            <div class="row people">
+            <div class="row people" style="margin-top:1%;padding-top:1%">
                 <div class="box">
                     <h2 class="text-center">What is Australian Footy?</h2>
                     <h3 class="description">The game’s objective is to move the ball downfield and kick the ball through the team’s goal. The main way to score points is by kicking the ball between the two tall goal posts. The team with the higher total score at the end of the match wins unless either a draw is declared or a tie-break is used.</h3>
@@ -170,13 +170,13 @@
         </div>
     </div>
 
-    <div class="highlight-clean" style="padding-top:2%;padding-bottom:0px;margin-bottom:0px">
+    <div id="quiz" class="highlight-clean" style="padding-top:2%;padding-bottom:0px;margin-bottom:0px">
         <div class="container">
             <div class="intro">
                 <div>
                     <h2 class="text-center">Do you want to know which team you might be with?</h2>
                 </div>
-                <div class="buttons"><a class="btn btn-primary" role="button" href="#">Do quiz</a></div>
+                <div class="buttons"><a class="btn btn-primary" role="button" href="@Url.Action("Question", "Main")">Play quiz</a></div>
             </div>
         </div>
     </div>
@@ -190,22 +190,103 @@
                 <div class="card-header">
                     <ul class="nav center nav-tabs card-header-tabs">
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Footy", "Main")#part1"><h1>Basic skill</h1></a></li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Footy2", "Main")#part1"><h1>Team skill</h1></a></li>
+                        @*<li class="nav-item"><a class="nav-link" href="@Url.Action("Footy2", "Main")#part1"><h1>Team skill</h1></a></li>*@
                         <li class="nav-item"><a class="nav-link active" href="#"><h1>Watch the Professionals</h1></a></li>
                     </ul>
                 </div>
                 <div id="c1" class="card-body">
                     <div class="projects-horizontal">
                         <div class="container">
-                            <div class="row projects">
-                                <div class="col-md-12 item" style="margin-top:1%;margin-bottom:1%">
-                                    <div class="row">
-                                        <div class="col-md-12 col-lg-5">
-                                            <img class="img-fluid" src="https://media.giphy.com/media/ZyupSLf6OI34PjVNh3/giphy.gif">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="img-fluid" src="../assets/image/f1.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h3>The fantastic moments</h3>
+                                            <h3>
+                                                <a href="https://www.youtube.com/watch?v=MWTWgnu6FZM&list=PLw7iQTmQkeUiEwIqdTPkUEYWd61tkjoVE" target="_blank">
+                                                    • Stephen Milne's best career moments<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=_rv1W6YdbJ4&list=PLw7iQTmQkeUiEwIqdTPkUEYWd61tkjoVE&index=2" target="_blank">
+                                                    • Adam Goodes' best career moments<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=9d_ZVhKxdZE&list=PLw7iQTmQkeUiEwIqdTPkUEYWd61tkjoVE&index=3" target="_blank">
+                                                    • Russell Robertson's best career moments<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/playlist?list=PLw7iQTmQkeUiEwIqdTPkUEYWd61tkjoVE" target="_blank">
+                                                    • More fantastic moments<br>
+                                                </a>
+                                            </h3>
                                         </div>
-                                        <div class="col">
-                                            <h3>Kicking</h3>
-                                            <p class="description">Line up your body with your target.Have your head slightly bent over the ball.Hold the ball over the thigh of the kicking leg.Guide the ball down with one hand.Point your toes at your target – see the ball hit the foot. Follow through straight towards the target.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="img-fluid" src="../assets/image/f2.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h3>Skill Guide</h3>
+                                            <h3>
+                                                <a href="https://www.youtube.com/watch?v=bT_8p6lBCMY&list=PLN3O8zv7K4dcOi8yHh6f4d_6HrV8d3trb&index=2" target="_blank">
+                                                    • Kicking<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=MWeHdGS-MiY&list=PLN3O8zv7K4dcOi8yHh6f4d_6HrV8d3trb&index=4" target="_blank">
+                                                    • Handballing<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=I9Rk7r0V_HI&list=PLN3O8zv7K4dcOi8yHh6f4d_6HrV8d3trb&index=5" target="_blank">
+                                                    • Marking<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=focosdxJ3QU&list=PLN3O8zv7K4dcOi8yHh6f4d_6HrV8d3trb&index=13" target="_blank">
+                                                    • Tacking<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/playlist?list=PLN3O8zv7K4dcOi8yHh6f4d_6HrV8d3trb" target="_blank">
+                                                    • More skill guide video<br>
+                                                </a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-1">
+                                        <div class="p-5"><img class="img-fluid" src="../assets/image/f3.jpg"></div>
+                                    </div>
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <h3>The 10 AFL</h3>
+                                            <h3>
+                                                <a href="https://www.youtube.com/watch?v=aavw4Zvvf_g" target="_blank">
+                                                    • Round One's best moments<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=w-5yg5ysuMg" target="_blank">
+                                                    • Round Two's best moments<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=gWa2Sf6chJk" target="_blank">
+                                                    • Round Three's best moments<br>
+                                                </a>
+
+                                                <a href="https://www.youtube.com/watch?v=03KxDfbgwgU" target="_blank">
+                                                    • Round Four's best moments<br>
+                                                </a>
+                                                <a href="https://www.youtube.com/results?search_query=The+10+round+AFL" target="_blank">
+                                                    • More best moments<br>
+                                                </a>
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
@@ -695,7 +776,7 @@
                 </div>
                 <div class="col-md-4">
                     <h4 class="text-uppercase mb-4">About Us</h4>
-                    <p class="lead mb-0"><span>DVoyagers.&nbsp;</span></p>
+                    <p class="lead mb-0"><span><a href="https://mahara.infotech.monash.edu.au/mahara/view/view.php?id=28236" target="_blank">D-Voyagers.&nbsp;</a></span></p>
                 </div>
             </div>
         </div>

@@ -39,12 +39,42 @@ namespace Newvics.Controllers
             return View();
         }
 
+        public ActionResult Question()
+        {
+            return View();
+        }
+
         public ActionResult Basketball()
         {
             return View();
         }
 
+        public ActionResult Basketball2()
+        {
+            return View();
+        }
+
         public ActionResult Cricket()
+        {
+            return View();
+        }
+
+        public ActionResult Cricket2()
+        {
+            return View();
+        }
+
+        public ActionResult Tennis()
+        {
+            return View();
+        }
+
+        public ActionResult Tennis2()
+        {
+            return View();
+        }
+
+        public ActionResult Tennis3()
         {
             return View();
         }
