@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     @Styles.Render("~/assets/css/Highlight-Clean.css")
     @Styles.Render("~/assets/css/NMDIGbanner.css")
     @Styles.Render("~/assets/css/Team-Boxed.css")
@@ -147,7 +149,7 @@
     <section id="top1" style="margin-bottom:0px;margin-top:0px;padding-bottom:0.5%;padding-bottom:0.5%">
         <div class="container">
             <div class="intro">
-                <iframe src="https://www.youtube.com/embed/zVdWbWi7kI8?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                <iframe src="https://www.youtube.com/embed/zVdWbWi7kI8?controls=1&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
             <div class="row people" style="margin-top:1%;padding-top:1%">
                 <div class="box">
@@ -184,13 +186,13 @@
             <div class="row">
                 <div class="col offset-lg-8 mx-auto text-center">
                     <div class="text-center" style="padding-bottom:2%;margin-bottom:2%">
-                        <select class="ui search selection dropdown" id="select1" name="level">
+                        <select class="selectpicker search selection dropdown" id="select1" name="level">
                             <option value="" disabled selected>Select your level</option>
                             <option value="Beginner">Beginner</option>
                             <option value="Intermediate">Intermediate</option>
                             <option value="Advanced">Advanced</option>
                         </select>
-                        <select class="ui search selection dropdown" id="select2" name="gender">
+                        <select class="selectpicker search selection dropdown" id="select2" name="gender">
                             <option value="" disabled selected>Select your gender</option>
                             <option value="Boy">Boy</option>
                             <option value="Girl">Girl</option>
@@ -204,7 +206,7 @@
                     <div id="content1" class="container">
                         <div class="ui placeholder segment">
                             <div class="ui two column stackable center aligned grid">
-                                <div id="result1" class="middle aligned row"> 
+                                <div id="result1" class="middle aligned row">
                                     <marquee>Get your racket type</marquee>
                                 </div>
                             </div>
@@ -538,7 +540,7 @@
                                                 • Knees should be bent to give you instant push in the direction of the ball. Weight should be supported on the balls of your feet.<br>
                                                 • Your racket should be held in a continental grip or modified continental between your forehand and backhand grips.<br>
                                                 • Keep your racket head at eye level. The racket should be cocked at about a 90 degree angle to your wrist.
-          
+
                                             </h4>
                                         </div>
                                     </div>
@@ -570,8 +572,8 @@
                                 <h2 class="text-center">
                                     Select suburb and see places.
                                 </h2>
-                                <div class="text-center" style="padding-bottom:2%;margin-bottom:2%">
-                                    <select class="ui search selection dropdown" id="select1" name="suburb">
+                                <div class="row-fluid text-center" style="padding-bottom:2%;margin-bottom:2%">
+                                    <select class="selectpicker search selection dropdown" data-live-search="true" id="select1" name="suburb">
                                         <option value="Abbotsford">Abbotsford</option>
                                         <option value="Aberfeldie">Aberfeldie</option>
                                         <option value="Airport West">Airport West</option>
@@ -985,7 +987,7 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <div class="text-center">
+                                    <div class="row-fluid text-center">
                                         <input type="submit" value="Get Places" class="btn btn-primary" onclick="GetSuburbData()">
                                     </div>
                                 </div>
@@ -1108,7 +1110,7 @@
 
             const h2 = document.createElement('h2')
             h2.setAttribute('class', 'text-center')
-            h2.textContent = `Cricket clubs near you`
+            h2.textContent = `Tennis clubs near you`
             intro.appendChild(h2)
 
             var request = new XMLHttpRequest()
@@ -1121,38 +1123,67 @@
             request.onload = function () {
                 // Begin accessing JSON data here
                 var data = JSON.parse(this.response)["results"]
+
                 if (request.status >= 200 && request.status < 400) {
                     data.forEach(place => {
-                        //const card = document.createElement('div')
-                        //card.setAttribute('class', 'card')
-
-                        //const h1 = document.createElement('h1')
-                        //h1.textContent = place.name
-
-                        //const p = document.createElement('p')
-                        //p.textContent = `${place.plus_code.compound_code}...`
-
-                        //container.appendChild(card)
-                        //card.appendChild(h1)
-                        //card.appendChild(p)
                         const card = document.createElement('div')
                         card.setAttribute('class', 'col-md-3 col-lg-3 item')
+                        card.setAttribute('style', 'margin-top:1%;margin-bottom:1%')
                         row.appendChild(card)
 
                         const box = document.createElement('div')
-                        box.setAttribute('class', 'box')
+                        box.setAttribute('class', 'box h-100')
                         card.appendChild(box)
+
+                        //if (place.photos != null) {
+                        //    var src1 = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='
+                        //    var src2 = place.photos.photo_reference
+                        //    var src3 = '&key=AIzaSyD9LUlNJjOHpdMmBFzYkLpuC91VlO5McLg'
+                        //    var src = src1 + src2 + src3
+                        //    const img = document.createElement('img')
+                        //    img.setAttribute('class', 'img-fluid')
+                        //    img.setAttribute('src', src)
+                        //    box.appendChild(img)
+                        //} else {
+                        //    const img = document.createElement('img')
+                        //    img.setAttribute('class', 'img-fluid')
+                        //    img.setAttribute('src', '../assets/image/u1.jpg')
+                        //    box.appendChild(img)
+                        //}
+                        var n = parseInt(3 * Math.random())
+                        var srcAttr = [];
+                        srcAttr[0] = "../assets/image/tl1.jpg";
+                        srcAttr[1] = "../assets/image/tl2.jpg";
+                        srcAttr[2] = "../assets/image/tl3.jpg";
+                        srcAttr[3] = "../assets/image/tl4.jpg";
+
+                        const img = document.createElement('img')
+                        img.setAttribute('class', 'img-fluid')
+                        img.setAttribute('src', srcAttr[n])
+                        box.appendChild(img)
 
                         const a = document.createElement('a')
 
                         var lat = place.geometry.location.lat
                         var lng = place.geometry.location.lng
-                        var url1 = 'https://maps.google.com/?ll='
+                        //var url1 = 'https://maps.google.com/?ll='
+                        var url1 = 'http://www.google.com/maps/place/'
                         var url = url1 + lat + ',' + lng
+                        var address = place.vicinity
 
                         a.setAttribute('href', url)
                         a.setAttribute('target', '_blank')
                         box.appendChild(a)
+
+                        const hhh = document.createElement('h4')
+                        var text1 = 'Rating: ' + place.rating
+                        hhh.textContent = text1
+                        box.appendChild(hhh)
+
+                        const h4 = document.createElement('h4')
+                        var text = 'Address:' + address
+                        h4.textContent = text
+                        box.appendChild(h4)
 
                         const h3 = document.createElement('h3')
                         h3.setAttribute('class', 'header')
@@ -1200,7 +1231,7 @@
 
             const h2 = document.createElement('h2')
             h2.setAttribute('class', 'text-center')
-            h2.textContent = `Cricket clubs`
+            h2.textContent = `Tennis clubs`
             intro.appendChild(h2)
 
             var request = new XMLHttpRequest()
@@ -1225,11 +1256,39 @@
                             data.forEach(place => {
                                 const card = document.createElement('div')
                                 card.setAttribute('class', 'col-md-3 col-lg-3 item')
+                                card.setAttribute('style', 'margin-top:1%;margin-bottom:1%')
                                 row.appendChild(card)
 
                                 const box = document.createElement('div')
-                                box.setAttribute('class', 'box')
+                                box.setAttribute('class', 'box h-100')
                                 card.appendChild(box)
+
+                                //if (place.photos != null) {
+                                //    var src1 = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='
+                                //    var src2 = place.photos.photo_reference
+                                //    var src3 = '&key=AIzaSyD9LUlNJjOHpdMmBFzYkLpuC91VlO5McLg'
+                                //    var src = src1 + src2 + src3
+                                //    const img = document.createElement('img')
+                                //    img.setAttribute('class', 'img-fluid')
+                                //    img.setAttribute('src', src)
+                                //    box.appendChild(img)
+                                //} else {
+                                //    const img = document.createElement('img')
+                                //    img.setAttribute('class', 'img-fluid')
+                                //    img.setAttribute('src', '../assets/image/u1.jpg')
+                                //    box.appendChild(img)
+                                //}
+                                var n = parseInt(3 * Math.random())
+                                var srcAttr = [];
+                                srcAttr[0] = "../assets/image/tl1.jpg";
+                                srcAttr[1] = "../assets/image/tl2.jpg";
+                                srcAttr[2] = "../assets/image/tl3.jpg";
+                                srcAttr[3] = "../assets/image/tl4.jpg";
+
+                                const img = document.createElement('img')
+                                img.setAttribute('class', 'img-fluid')
+                                img.setAttribute('src', srcAttr[n])
+                                box.appendChild(img)
 
                                 const a = document.createElement('a')
                                 var address = place.formatted_address
@@ -1239,6 +1298,11 @@
                                 a.setAttribute('href', url)
                                 a.setAttribute('target', '_blank')
                                 box.appendChild(a)
+
+                                const hhh = document.createElement('h4')
+                                var text1 = 'Rating: ' + place.rating
+                                hhh.textContent = text1
+                                box.appendChild(hhh)
 
                                 const h4 = document.createElement('h4')
                                 var text = 'Address:' + address
@@ -1284,5 +1348,7 @@
     @*@Scripts.Render("~/Scripts/semantic.js")
         @Scripts.Render("~/Scripts/semantic.min.js")*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 </body>
 </html>

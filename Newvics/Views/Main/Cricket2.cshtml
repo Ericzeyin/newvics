@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     @Styles.Render("~/assets/css/Highlight-Clean.css")
     @Styles.Render("~/assets/css/NMDIGbanner.css")
     @Styles.Render("~/assets/css/Team-Boxed.css")
@@ -147,7 +149,7 @@
     <section id="top1" style="margin-bottom:0px;margin-top:0px;padding-bottom:0.5%;padding-bottom:0.5%">
         <div class="container">
             <div class="intro">
-                <iframe src="https://www.youtube.com/embed/yPXAzgwwo0A?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                <iframe src="https://www.youtube.com/embed/yPXAzgwwo0A?controls=1&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
             </div>
             <div class="row people" style="margin-top:1%;padding-top:1%">
                 <div class="box">
@@ -418,8 +420,8 @@
                                 <h2 class="text-center">
                                     Select suburb and see places.
                                 </h2>
-                                <div class="text-center" style="padding-bottom:2%;margin-bottom:2%">
-                                    <select class="ui search selection dropdown" id="select1" name="suburb">
+                                <div class="row-fluid text-center" style="padding-bottom:2%;margin-bottom:2%">
+                                    <select class="selectpicker search selection dropdown" data-live-search="true" id="select1" name="suburb">
                                         <option value="Abbotsford">Abbotsford</option>
                                         <option value="Aberfeldie">Aberfeldie</option>
                                         <option value="Airport West">Airport West</option>
@@ -833,7 +835,7 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <div class="text-center">
+                                    <div class="row-fluid text-center">
                                         <input type="submit" value="Get Places" class="btn btn-primary" onclick="GetSuburbData()">
                                     </div>
                                 </div>
@@ -882,7 +884,7 @@
                 </div>
             </div>
         </div>
-        <p>&copy; @ - Newvics</p>
+        <p>&copy; @DateTime.Now.Year - Newvics</p>
     </footer>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrX2JUBuXyOQ7P8p8Q_SLJ3GTX5m1eRPs"></script>
@@ -930,6 +932,7 @@
             navigator.geolocation.getCurrentPosition(geolocationReturnedCoordinates, null, null);
         }
 
+
         function GetData(url) {
             const root = document.getElementById('root')
 
@@ -969,38 +972,67 @@
             request.onload = function () {
                 // Begin accessing JSON data here
                 var data = JSON.parse(this.response)["results"]
+
                 if (request.status >= 200 && request.status < 400) {
                     data.forEach(place => {
-                        //const card = document.createElement('div')
-                        //card.setAttribute('class', 'card')
-
-                        //const h1 = document.createElement('h1')
-                        //h1.textContent = place.name
-
-                        //const p = document.createElement('p')
-                        //p.textContent = `${place.plus_code.compound_code}...`
-
-                        //container.appendChild(card)
-                        //card.appendChild(h1)
-                        //card.appendChild(p)
                         const card = document.createElement('div')
                         card.setAttribute('class', 'col-md-3 col-lg-3 item')
+                        card.setAttribute('style', 'margin-top:1%;margin-bottom:1%')
                         row.appendChild(card)
 
                         const box = document.createElement('div')
-                        box.setAttribute('class', 'box')
+                        box.setAttribute('class', 'box h-100')
                         card.appendChild(box)
+
+                        //if (place.photos != null) {
+                        //    var src1 = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='
+                        //    var src2 = place.photos.photo_reference
+                        //    var src3 = '&key=AIzaSyD9LUlNJjOHpdMmBFzYkLpuC91VlO5McLg'
+                        //    var src = src1 + src2 + src3
+                        //    const img = document.createElement('img')
+                        //    img.setAttribute('class', 'img-fluid')
+                        //    img.setAttribute('src', src)
+                        //    box.appendChild(img)
+                        //} else {
+                        //    const img = document.createElement('img')
+                        //    img.setAttribute('class', 'img-fluid')
+                        //    img.setAttribute('src', '../assets/image/u1.jpg')
+                        //    box.appendChild(img)
+                        //}
+                        var n = parseInt(3 * Math.random())
+                        var srcAttr = [];
+                        srcAttr[0] = "../assets/image/cl1.jpg";
+                        srcAttr[1] = "../assets/image/cl2.jpg";
+                        srcAttr[2] = "../assets/image/cl3.jpg";
+                        srcAttr[3] = "../assets/image/cr2.jpg";
+
+                        const img = document.createElement('img')
+                        img.setAttribute('class', 'img-fluid')
+                        img.setAttribute('src', srcAttr[n])
+                        box.appendChild(img)
 
                         const a = document.createElement('a')
 
                         var lat = place.geometry.location.lat
                         var lng = place.geometry.location.lng
-                        var url1 = 'https://maps.google.com/?ll='
+                        //var url1 = 'https://maps.google.com/?ll='
+                        var url1 = 'http://www.google.com/maps/place/'
                         var url = url1 + lat + ',' + lng
+                        var address = place.vicinity
 
                         a.setAttribute('href', url)
                         a.setAttribute('target', '_blank')
                         box.appendChild(a)
+
+                        const hhh = document.createElement('h4')
+                        var text1 = 'Rating: ' + place.rating
+                        hhh.textContent = text1
+                        box.appendChild(hhh)
+
+                        const h4 = document.createElement('h4')
+                        var text = 'Address:' + address
+                        h4.textContent = text
+                        box.appendChild(h4)
 
                         const h3 = document.createElement('h3')
                         h3.setAttribute('class', 'header')
@@ -1073,11 +1105,39 @@
                             data.forEach(place => {
                                 const card = document.createElement('div')
                                 card.setAttribute('class', 'col-md-3 col-lg-3 item')
+                                card.setAttribute('style', 'margin-top:1%;margin-bottom:1%')
                                 row.appendChild(card)
 
                                 const box = document.createElement('div')
-                                box.setAttribute('class', 'box')
+                                box.setAttribute('class', 'box h-100')
                                 card.appendChild(box)
+
+                                //if (place.photos != null) {
+                                //    var src1 = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='
+                                //    var src2 = place.photos.photo_reference
+                                //    var src3 = '&key=AIzaSyD9LUlNJjOHpdMmBFzYkLpuC91VlO5McLg'
+                                //    var src = src1 + src2 + src3
+                                //    const img = document.createElement('img')
+                                //    img.setAttribute('class', 'img-fluid')
+                                //    img.setAttribute('src', src)
+                                //    box.appendChild(img)
+                                //} else {
+                                //    const img = document.createElement('img')
+                                //    img.setAttribute('class', 'img-fluid')
+                                //    img.setAttribute('src', '../assets/image/u1.jpg')
+                                //    box.appendChild(img)
+                                //}
+                                var n = parseInt(3 * Math.random())
+                                var srcAttr = [];
+                                srcAttr[0] = "../assets/image/cl1.jpg";
+                                srcAttr[1] = "../assets/image/cl2.jpg";
+                                srcAttr[2] = "../assets/image/cl3.jpg";
+                                srcAttr[3] = "../assets/image/cr2.jpg";
+
+                                const img = document.createElement('img')
+                                img.setAttribute('class', 'img-fluid')
+                                img.setAttribute('src', srcAttr[n])
+                                box.appendChild(img)
 
                                 const a = document.createElement('a')
                                 var address = place.formatted_address
@@ -1087,6 +1147,11 @@
                                 a.setAttribute('href', url)
                                 a.setAttribute('target', '_blank')
                                 box.appendChild(a)
+
+                                const hhh = document.createElement('h4')
+                                var text1 = 'Rating: ' + place.rating
+                                hhh.textContent = text1
+                                box.appendChild(hhh)
 
                                 const h4 = document.createElement('h4')
                                 var text = 'Address:' + address
@@ -1123,14 +1188,16 @@
         }
     </script>
 
-    @
-    @
+    @Scripts.Render("~/assets/js/jquery.min.js")
+    @Scripts.Render("~/assets/bootstrap/js/bootstrap.min.js")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    @
+    @Scripts.Render("~/assets/js/bs-animation.js")
     @*@Scripts.Render("~/resource/js/agency.js")*@
     @*@Scripts.Render("~/Scripts/semantic.js")
         @Scripts.Render("~/Scripts/semantic.min.js")*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
 </body>
 </html>
