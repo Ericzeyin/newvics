@@ -137,7 +137,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Footy", "Main")">Footy</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Index", "Ranks")">Footy</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
@@ -1057,66 +1057,68 @@
                     if (data != null) {
                         if (request.status >= 200 && request.status < 400) {
                             data.forEach(place => {
-                                const card = document.createElement('div')
-                                card.setAttribute('class', 'col-md-3 col-lg-3 item')
-                                card.setAttribute('style', 'margin-top:1%;margin-bottom:1%')
-                                row.appendChild(card)
-
-                                const box = document.createElement('div')
-                                box.setAttribute('class', 'box h-100')
-                                card.appendChild(box)
-
-                                //if (place.photos != null) {
-                                //    var src1 = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='
-                                //    var src2 = place.photos.photo_reference
-                                //    var src3 = '&key=AIzaSyD9LUlNJjOHpdMmBFzYkLpuC91VlO5McLg'
-                                //    var src = src1 + src2 + src3
-                                //    const img = document.createElement('img')
-                                //    img.setAttribute('class', 'img-fluid')
-                                //    img.setAttribute('src', src)
-                                //    box.appendChild(img)
-                                //} else {
-                                //    const img = document.createElement('img')
-                                //    img.setAttribute('class', 'img-fluid')
-                                //    img.setAttribute('src', '../assets/image/u1.jpg')
-                                //    box.appendChild(img)
-                                //}
-                                var n = parseInt(3 * Math.random())
-                                var srcAttr = [];
-                                srcAttr[0] = "../assets/image/cl1.jpg";
-                                srcAttr[1] = "../assets/image/cl2.jpg";
-                                srcAttr[2] = "../assets/image/cl3.jpg";
-                                srcAttr[3] = "../assets/image/cr2.jpg";
-
-                                const img = document.createElement('img')
-                                img.setAttribute('class', 'img-fluid')
-                                img.setAttribute('src', srcAttr[n])
-                                box.appendChild(img)
-
-                                const a = document.createElement('a')
                                 var address = place.formatted_address
-                                var url1 = 'https://maps.google.com/?q='
-                                var url = url1 + place.name + ',' + address
+                                if (address.indexOf(selectedItem) != -1) {
+                                    const card = document.createElement('div')
+                                    card.setAttribute('class', 'col-md-3 col-lg-3 item')
+                                    card.setAttribute('style', 'margin-top:1%;margin-bottom:1%')
+                                    row.appendChild(card)
 
-                                a.setAttribute('href', url)
-                                a.setAttribute('target', '_blank')
-                                box.appendChild(a)
+                                    const box = document.createElement('div')
+                                    box.setAttribute('class', 'box h-100')
+                                    card.appendChild(box)
 
-                                const hhh = document.createElement('h4')
-                                var text1 = 'Rating: ' + place.rating
-                                hhh.textContent = text1
-                                box.appendChild(hhh)
+                                    //if (place.photos != null) {
+                                    //    var src1 = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference='
+                                    //    var src2 = place.photos.photo_reference
+                                    //    var src3 = '&key=AIzaSyD9LUlNJjOHpdMmBFzYkLpuC91VlO5McLg'
+                                    //    var src = src1 + src2 + src3
+                                    //    const img = document.createElement('img')
+                                    //    img.setAttribute('class', 'img-fluid')
+                                    //    img.setAttribute('src', src)
+                                    //    box.appendChild(img)
+                                    //} else {
+                                    //    const img = document.createElement('img')
+                                    //    img.setAttribute('class', 'img-fluid')
+                                    //    img.setAttribute('src', '../assets/image/u1.jpg')
+                                    //    box.appendChild(img)
+                                    //}
+                                    var n = parseInt(3 * Math.random())
+                                    var srcAttr = [];
+                                    srcAttr[0] = "../assets/image/cl1.jpg";
+                                    srcAttr[1] = "../assets/image/cl2.jpg";
+                                    srcAttr[2] = "../assets/image/cl3.jpg";
+                                    srcAttr[3] = "../assets/image/cr2.jpg";
 
-                                const h4 = document.createElement('h4')
-                                var text = 'Address:' + address
-                                h4.textContent = text
-                                box.appendChild(h4)
+                                    const img = document.createElement('img')
+                                    img.setAttribute('class', 'img-fluid')
+                                    img.setAttribute('src', srcAttr[n])
+                                    box.appendChild(img)
 
-                                const h3 = document.createElement('h3')
-                                h3.setAttribute('class', 'header')
-                                h3.textContent = place.name
+                                    const a = document.createElement('a')
+                                    var url1 = 'https://maps.google.com/?q='
+                                    var url = url1 + place.name + ',' + address
 
-                                a.appendChild(h3)
+                                    a.setAttribute('href', url)
+                                    a.setAttribute('target', '_blank')
+                                    box.appendChild(a)
+
+                                    const hhh = document.createElement('h4')
+                                    var text1 = 'Rating: ' + place.rating
+                                    hhh.textContent = text1
+                                    box.appendChild(hhh)
+
+                                    const h4 = document.createElement('h4')
+                                    var text = 'Address:' + address
+                                    h4.textContent = text
+                                    box.appendChild(h4)
+
+                                    const h3 = document.createElement('h3')
+                                    h3.setAttribute('class', 'header')
+                                    h3.textContent = place.name
+
+                                    a.appendChild(h3)
+                                }
 
                             })
                         } else {
@@ -1126,7 +1128,7 @@
                         }
                     } else {
                         const errorMessage = document.createElement('marquee')
-                        errorMessage.textContent = `Sorry, there is club in this suburb!`
+                        errorMessage.textContent = `Sorry, there is no club in this suburb!`
                         app.appendChild(errorMessage)
                     }
 
