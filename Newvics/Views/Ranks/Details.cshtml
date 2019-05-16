@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Footy-Newvics</title>
+    <title>Footy-NewVics</title>
     @Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
@@ -50,7 +50,7 @@
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>Newvics</a>
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
                     type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-align-justify"></i>
@@ -130,21 +130,23 @@
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Top three footy teams</h2>
-                <h4 class="text-center title">Rank date: @ViewData["date"] </h4>
             </div>
-            <div class="row people">
-                @foreach (var item in (IEnumerable<Newvics.Models.Rank>)ViewData["rankList"])
-                {
-                    <div class="col-sm-6 col-lg-4 item" style="margin-bottom:1%">
-                        <div class="box h-100">
-                            <img class="img-fluid" src="~/assets/image/@item.Team.Image">
-                            <a href="@item.Team.Url" target="_blank"><h3 class="header">@item.Team.Name</h3></a>
-                            <p class="title">Rank: @item.Rank1</p>
-                            <p class="description">@item.Team.Description</p>
-                            <div class="social"><a><i class="fa fa-facebook-official"></i></a><a><i class="fa fa-twitter"></i></a><a><i class="fa fa-instagram"></i></a></div>
+            <div style="padding-bottom:1%">
+                <div class="row people" style="margin-bottom:0px;padding-bottom:0px">
+                    @foreach (var item in (IEnumerable<Newvics.Models.Rank>)ViewData["rankList"])
+                    {
+                        <div class="col-sm-6 col-lg-4 item">
+                            <div class="box h-100">
+                                <img class="img-fluid" src="~/assets/image/@item.Team.Image">
+                                <a href="@item.Team.Url" target="_blank"><h3 class="header">@item.Team.Name</h3></a>
+                                <p class="title">Rank: @item.Rank1</p>
+                                <p class="description" style="text-align:justify">@item.Team.Description</p>
+                                <div class="social"><a><i class="fa fa-facebook-official"></i></a><a><i class="fa fa-twitter"></i></a><a><i class="fa fa-instagram"></i></a></div>
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
+                <h2 style="text-align:right;margin-bottom:1%;padding-top:1%;margin-top:0px">Rank date: @ViewData["date"] </h2>
             </div>
         </div>
     </div>
@@ -169,7 +171,7 @@
             <div class="card" style="margin-bottom:2%">
                 <div class="card-header">
                     <ul class="nav center nav-tabs card-header-tabs">
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Ranks")#part1"><h1>Basic skill</h1></a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index", "Ranks")#part1"><h1>Basic skills</h1></a></li>
                         @*<li class="nav-item"><a class="nav-link" href="@Url.Action("Footy2", "Main")#part1"><h1>Team skill</h1></a></li>*@
                         <li class="nav-item"><a class="nav-link active" href="#part1"><h1>Watch the Professionals</h1></a></li>
                     </ul>
@@ -184,8 +186,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h3>The fantastic moments</h3>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">The fantastic moments</h3>
+                                            <h3 style="font-family:Calibri">
                                                 <a href="https://www.youtube.com/watch?v=MWTWgnu6FZM&list=PLw7iQTmQkeUiEwIqdTPkUEYWd61tkjoVE" target="_blank">
                                                     • Stephen Milne's best career moments<br>
                                                 </a>
@@ -213,8 +215,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h3>Skill Guide</h3>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Skill Guide</h3>
+                                            <h3 style="font-family:Calibri">
                                                 <a href="https://www.youtube.com/watch?v=bT_8p6lBCMY&list=PLN3O8zv7K4dcOi8yHh6f4d_6HrV8d3trb&index=2" target="_blank">
                                                     • Kicking<br>
                                                 </a>
@@ -246,8 +248,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h3>The 10 AFL</h3>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">The 10 AFL</h3>
+                                            <h3 style="font-family:Calibri">
                                                 <a href="https://www.youtube.com/watch?v=aavw4Zvvf_g" target="_blank">
                                                     • Round One's best moments<br>
                                                 </a>
@@ -302,7 +304,6 @@
                                         <option value="Aberfeldie">Aberfeldie</option>
                                         <option value="Airport West">Airport West</option>
                                         <option value="Albanvale">Albanvale</option>
-                                        <option value="Albert Park">Albert Park</option>
                                         <option value="Albion">Albion</option>
                                         <option value="Alphington">Alphington</option>
                                         <option value="Altona Meadows">Altona Meadows</option>
@@ -875,12 +876,18 @@
                         //    img.setAttribute('src', '../assets/image/u1.jpg')
                         //    box.appendChild(img)
                         //}
-                        var n = parseInt(3 * Math.random())
+                        var n = parseInt(9 * Math.random())
                         var srcAttr = [];
-                        srcAttr[0] = "../assets/image/u1.jpg";
-                        srcAttr[1] = "../assets/image/u2.jpg";
-                        srcAttr[2] = "../assets/image/u3.jpg";
-                        srcAttr[3] = "../assets/image/u4.jpg";
+                        srcAttr[0] = "../assets/image/fp1.jpg";
+                        srcAttr[1] = "../assets/image/fp2.jpg";
+                        srcAttr[2] = "../assets/image/fp3.jpg";
+                        srcAttr[3] = "../assets/image/fp4.jpg";
+                        srcAttr[4] = "../assets/image/fp5.jpg";
+                        srcAttr[5] = "../assets/image/fp6.jpg";
+                        srcAttr[6] = "../assets/image/fp7.jpg";
+                        srcAttr[7] = "../assets/image/fp8.jpg";
+                        srcAttr[8] = "../assets/image/fp9.jpg";
+                        srcAttr[9] = "../assets/image/fp10.jpg";
 
                         const img = document.createElement('img')
                         img.setAttribute('class', 'img-fluid')
@@ -1005,12 +1012,18 @@
                                     //    img.setAttribute('src', '../assets/image/u1.jpg')
                                     //    box.appendChild(img)
                                     //}
-                                    var n = parseInt(3 * Math.random())
+                                    var n = parseInt(9 * Math.random())
                                     var srcAttr = [];
-                                    srcAttr[0] = "../assets/image/u1.jpg";
-                                    srcAttr[1] = "../assets/image/u2.jpg";
-                                    srcAttr[2] = "../assets/image/u3.jpg";
-                                    srcAttr[3] = "../assets/image/u4.jpg";
+                                    srcAttr[0] = "../assets/image/fp1.jpg";
+                                    srcAttr[1] = "../assets/image/fp2.jpg";
+                                    srcAttr[2] = "../assets/image/fp3.jpg";
+                                    srcAttr[3] = "../assets/image/fp4.jpg";
+                                    srcAttr[4] = "../assets/image/fp5.jpg";
+                                    srcAttr[5] = "../assets/image/fp6.jpg";
+                                    srcAttr[6] = "../assets/image/fp7.jpg";
+                                    srcAttr[7] = "../assets/image/fp8.jpg";
+                                    srcAttr[8] = "../assets/image/fp9.jpg";
+                                    srcAttr[9] = "../assets/image/fp10.jpg";
 
                                     const img = document.createElement('img')
                                     img.setAttribute('class', 'img-fluid')
@@ -1040,7 +1053,7 @@
                                     h3.textContent = place.name
 
                                     a.appendChild(h3)
-                                } 
+                                }
                             })
                         } else {
                             const errorMessage = document.createElement('marquee')

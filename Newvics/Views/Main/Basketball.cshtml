@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Basketball-Newvics</title>
+    <title>Basketball-NewVics</title>
     @Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
@@ -129,7 +129,7 @@
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>Newvics</a>
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
                     type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-align-justify"></i>
@@ -160,7 +160,7 @@
         </div>
     </section>
 
-    <div class="highlight-clean" style="background-color:azure;padding-bottom:1%">
+    <div class="highlight-clean" style="background-color:azure">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Do you want know more about basketball?</h2>
@@ -176,7 +176,7 @@
         <div class="container" style="padding-top:2%">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Championships of basketball</h2>
+                    <h2 class="section-heading">Play in Victoria</h2>
                     <hr class="my-4">
                 </div>
             </div>
@@ -185,7 +185,9 @@
             <div class="row justify-content-center">
                 <div class="col-sm-6 col-lg-4">
                     <div class="card clean-card text-center">
-                        <img class="card-img-top w-100 d-block" src="../assets/image/club1.jpg">
+                        <a href="@Url.Action("Basketballc1", "Main")" target="_blank">
+                            <img class="card-img-top w-100 d-block" src="../assets/image/club1.jpg">
+                        </a>
                         <div class="card-body info">
                             <h4 class="card-title">Under 14 Club  Championships</h4>
                         </div>
@@ -193,18 +195,22 @@
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="card clean-card text-center">
-                        <img class="card-img-top w-100 d-block" src="../assets/image/club2.jpg">
-                        <div class="card-body info">
-                            <h4 class="card-title">Under 16 Club  Championships</h4>
-                        </div>
+                        <a href="@Url.Action("Basketballc2", "Main")" target="_blank">
+                            <img class="card-img-top w-100 d-block" src="../assets/image/club2.jpg">
+                            </a>
+                            <div class="card-body info">
+                                <h4 class="card-title">Under 16 Club  Championships</h4>
+                            </div>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
                     <div class="card clean-card text-center">
-                        <img class="card-img-top w-100 d-block" src="../assets/image/club3.jpg">
-                        <div class="card-body info">
-                            <h4 class="card-title">School Championships</h4>
-                        </div>
+                        <a href="@Url.Action("Basketballc3", "Main")" target="_blank">
+                            <img class="card-img-top w-100 d-block" src="../assets/image/club3.jpg">
+                            </a>
+                            <div class="card-body info">
+                                <h4 class="card-title">School Championships</h4>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -215,7 +221,7 @@
                     <h3>
                         You can play in above Championships:<br>
                         participate link:
-                        <a href="https://australia.basketball/participate/">https://australia.basketball/participate/</a>
+                        <a href="https://australia.basketball/participate/" target="_blank">https://australia.basketball/participate/</a>
                     </h3>
                 </div>
             </div>
@@ -230,7 +236,7 @@
             <div class="card" style="margin-bottom:2%">
                 <div class="card-header">
                     <ul class="nav center nav-tabs card-header-tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#"><h1>Basic skill</h1></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"><h1>Basic skills</h1></a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Basketball2", "Main")#part1"><h1>Watch the Professionals</h1></a></li>
                     </ul>
                 </div>
@@ -244,11 +250,11 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-1">
                                         <div class="p-5">
-                                            <h2 class="display-4">Ball Handling</h2>
-                                            <h3>
-                                                • Dribble tags<br>
-                                                • Stationary drills<br>
-                                                • Tight chairs
+                                            <h3 class="display-4" style="font-family:Calibri">Ball Handling</h3>
+                                            <h3 style="font-family:Calibri">
+                                                • Dribble tags: As you dribble the ball, all other players need to avoid being tagged by someone having the ball. be constant in dribbling. <br>
+                                                • Stationary drills: Attempt some drooling in a circular motion around your legs at varied heights. You can also train by dribbling the ball through your legs without moving around the court. <br>
+                                                • Tight chairs: This skill is usually done with six chairs. You need to arrange them in two rows of three chairs each. you have dribble around each chair with different skills.
                                             </h3>
                                         </div>
                                     </div>
@@ -261,11 +267,11 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h2 class="display-4">Shooting</h2>
-                                            <h4>
+                                            <h3 class="display-4" style="font-family:Calibri">Shooting</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • Air-ball drill: You all get in an offensive position, dropping your elbows, jumping and shooting from your highest points.<br>
                                                 • Box drill:  is carried out with one ball but with players on the right and left side on the court. Player on the right takes a jump shot to the backyard while the left side players run up to receive the rebound making their own shot.
-                                            </h4>
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
@@ -277,8 +283,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-1">
                                         <div class="p-5">
-                                            <h2 class="display-4">Passing</h2>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Passing</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • Practice chest passes with other trainees<br>
                                                 • Keep the ball directly above your heads<br>
                                                 • Overhead passes<br>
@@ -295,8 +301,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h2 class="display-4">Offensive /Defensive drills</h2>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Offensive /Defensive drills</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • 1-on-1 Continuous<br>
                                                 • 4-Point Closeouts<br>
                                                 • Defensive Specialist<br>
@@ -340,7 +346,6 @@
                                         <option value="Aberfeldie">Aberfeldie</option>
                                         <option value="Airport West">Airport West</option>
                                         <option value="Albanvale">Albanvale</option>
-                                        <option value="Albert Park">Albert Park</option>
                                         <option value="Albion">Albion</option>
                                         <option value="Alphington">Alphington</option>
                                         <option value="Altona Meadows">Altona Meadows</option>
@@ -913,12 +918,18 @@
                         //    img.setAttribute('src', '../assets/image/u1.jpg')
                         //    box.appendChild(img)
                         //}
-                        var n = parseInt(3 * Math.random())
+                        var n = parseInt(9 * Math.random())
                         var srcAttr = [];
-                        srcAttr[0] = "../assets/image/bl1.jpg";
-                        srcAttr[1] = "../assets/image/bl2.jpg";
-                        srcAttr[2] = "../assets/image/bl3.jpg";
-                        srcAttr[3] = "../assets/image/bl4.jpg";
+                        srcAttr[0] = "../assets/image/bp1.jpg";
+                        srcAttr[1] = "../assets/image/bp2.jpg";
+                        srcAttr[2] = "../assets/image/bp3.jpg";
+                        srcAttr[3] = "../assets/image/bp4.jpg";
+                        srcAttr[4] = "../assets/image/bp5.jpg";
+                        srcAttr[5] = "../assets/image/bp6.jpg";
+                        srcAttr[6] = "../assets/image/bp7.jpg";
+                        srcAttr[7] = "../assets/image/bp8.jpg";
+                        srcAttr[8] = "../assets/image/bp9.jpg";
+                        srcAttr[9] = "../assets/image/bp10.jpg";
 
                         const img = document.createElement('img')
                         img.setAttribute('class', 'img-fluid')
@@ -1043,12 +1054,18 @@
                                     //    img.setAttribute('src', '../assets/image/u1.jpg')
                                     //    box.appendChild(img)
                                     //}
-                                    var n = parseInt(3 * Math.random())
+                                    var n = parseInt(9 * Math.random())
                                     var srcAttr = [];
-                                    srcAttr[0] = "../assets/image/bl1.jpg";
-                                    srcAttr[1] = "../assets/image/bl2.jpg";
-                                    srcAttr[2] = "../assets/image/bl3.jpg";
-                                    srcAttr[3] = "../assets/image/bl4.jpg";
+                                    srcAttr[0] = "../assets/image/bp1.jpg";
+                                    srcAttr[1] = "../assets/image/bp2.jpg";
+                                    srcAttr[2] = "../assets/image/bp3.jpg";
+                                    srcAttr[3] = "../assets/image/bp4.jpg";
+                                    srcAttr[4] = "../assets/image/bp5.jpg";
+                                    srcAttr[5] = "../assets/image/bp6.jpg";
+                                    srcAttr[6] = "../assets/image/bp7.jpg";
+                                    srcAttr[7] = "../assets/image/bp8.jpg";
+                                    srcAttr[8] = "../assets/image/bp9.jpg";
+                                    srcAttr[9] = "../assets/image/bp10.jpg";
 
                                     const img = document.createElement('img')
                                     img.setAttribute('class', 'img-fluid')

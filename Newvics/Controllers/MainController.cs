@@ -54,6 +54,21 @@ namespace Newvics.Controllers
             return View();
         }
 
+        public ActionResult Basketballc1()
+        {
+            return View();
+        }
+
+        public ActionResult Basketballc2()
+        {
+            return View();
+        }
+
+        public ActionResult Basketballc3()
+        {
+            return View();
+        }
+
         public ActionResult Cricket()
         {
             return View();

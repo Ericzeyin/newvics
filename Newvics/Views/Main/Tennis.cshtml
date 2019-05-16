@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Tennis-Newvics</title>
+    <title>Tennis-NewVics</title>
     @Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
@@ -129,7 +129,7 @@
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>Newvics</a>
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
                     type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-align-justify"></i>
@@ -186,13 +186,13 @@
             <div class="row">
                 <div class="col offset-lg-8 mx-auto text-center">
                     <div class="text-center" style="padding-bottom:2%;margin-bottom:2%">
-                        <select class="selectpicker search selection dropdown" id="select11" name="level">
+                        <select class="ui search selection dropdown" id="select11" name="level">
                             <option value="" disabled selected>Select your level</option>
                             <option value="Beginner">Beginner</option>
                             <option value="Intermediate">Intermediate</option>
                             <option value="Advanced">Advanced</option>
                         </select>
-                        <select class="selectpicker search selection dropdown" id="select12" name="gender">
+                        <select class="ui search selection dropdown" id="select12" name="gender">
                             <option value="" disabled selected>Select your gender</option>
                             <option value="Boy">Boy</option>
                             <option value="Girl">Girl</option>
@@ -465,7 +465,7 @@
             <div class="card" style="margin-bottom:2%">
                 <div class="card-header">
                     <ul class="nav center nav-tabs card-header-tabs">
-                        <li class="nav-item"><a class="nav-link active" href="#"><h1>Basic skill</h1></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"><h1>Basic skills</h1></a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Tennis2", "Main")#part1"><h1>Watch the Professionals</h1></a></li>
                     </ul>
                 </div>
@@ -479,8 +479,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-1">
                                         <div class="p-5">
-                                            <h2 class="display-4">Forehand</h2>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Forehand</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • Visualize the Correct Stroke<br>
                                                 • Simplify the forehand stroke<br>
                                                 • Forehand Footwork<br>
@@ -498,8 +498,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h2 class="display-4">Backhand</h2>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Backhand</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • Start off in the ready position<br>
                                                 • Mark the ball and predicted where it will land<br>
                                                 • Hold the racquet with both hands, with your most dominant hand below the other.<br>
@@ -517,8 +517,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-1">
                                         <div class="p-5">
-                                            <h2 class="display-4">The Serve</h2>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">The Serve</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • Position yourself in your normal serving stance, allow your racquet to drop<br>
                                                 • Turn your shoulders as you’re starting the racquet drop<br>
                                                 • Lead upwards with the edge<br>
@@ -535,13 +535,13 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h2 class="display-4">The Volley</h2>
-                                            <h4>
+                                            <h3 class="display-4" style="font-family:Calibri">The Volley</h3>
+                                            <h3 style="font-family:Calibri">
                                                 • Knees should be bent to give you instant push in the direction of the ball. Weight should be supported on the balls of your feet.<br>
                                                 • Your racket should be held in a continental grip or modified continental between your forehand and backhand grips.<br>
                                                 • Keep your racket head at eye level. The racket should be cocked at about a 90 degree angle to your wrist.
 
-                                            </h4>
+                                            </h3>
                                         </div>
                                     </div>
                                 </div>
@@ -578,7 +578,6 @@
                                         <option value="Aberfeldie">Aberfeldie</option>
                                         <option value="Airport West">Airport West</option>
                                         <option value="Albanvale">Albanvale</option>
-                                        <option value="Albert Park">Albert Park</option>
                                         <option value="Albion">Albion</option>
                                         <option value="Alphington">Alphington</option>
                                         <option value="Altona Meadows">Altona Meadows</option>
@@ -1150,12 +1149,18 @@
                         //    img.setAttribute('src', '../assets/image/u1.jpg')
                         //    box.appendChild(img)
                         //}
-                        var n = parseInt(3 * Math.random())
+                        var n = parseInt(9 * Math.random())
                         var srcAttr = [];
-                        srcAttr[0] = "../assets/image/tl1.jpg";
-                        srcAttr[1] = "../assets/image/tl2.jpg";
-                        srcAttr[2] = "../assets/image/tl3.jpg";
-                        srcAttr[3] = "../assets/image/tl4.jpg";
+                        srcAttr[0] = "../assets/image/tp1.jpg";
+                        srcAttr[1] = "../assets/image/tp2.jpg";
+                        srcAttr[2] = "../assets/image/tp3.jpg";
+                        srcAttr[3] = "../assets/image/tp4.jpg";
+                        srcAttr[4] = "../assets/image/tp5.jpg";
+                        srcAttr[5] = "../assets/image/tp6.jpg";
+                        srcAttr[6] = "../assets/image/tp7.jpg";
+                        srcAttr[7] = "../assets/image/tp8.jpg";
+                        srcAttr[8] = "../assets/image/tp9.jpg";
+                        srcAttr[9] = "../assets/image/tp10.jpg";
 
                         const img = document.createElement('img')
                         img.setAttribute('class', 'img-fluid')
@@ -1280,12 +1285,18 @@
                                     //    img.setAttribute('src', '../assets/image/u1.jpg')
                                     //    box.appendChild(img)
                                     //}
-                                    var n = parseInt(3 * Math.random())
+                                    var n = parseInt(9 * Math.random())
                                     var srcAttr = [];
-                                    srcAttr[0] = "../assets/image/tl1.jpg";
-                                    srcAttr[1] = "../assets/image/tl2.jpg";
-                                    srcAttr[2] = "../assets/image/tl3.jpg";
-                                    srcAttr[3] = "../assets/image/tl4.jpg";
+                                    srcAttr[0] = "../assets/image/tp1.jpg";
+                                    srcAttr[1] = "../assets/image/tp2.jpg";
+                                    srcAttr[2] = "../assets/image/tp3.jpg";
+                                    srcAttr[3] = "../assets/image/tp4.jpg";
+                                    srcAttr[4] = "../assets/image/tp5.jpg";
+                                    srcAttr[5] = "../assets/image/tp6.jpg";
+                                    srcAttr[6] = "../assets/image/tp7.jpg";
+                                    srcAttr[7] = "../assets/image/tp8.jpg";
+                                    srcAttr[8] = "../assets/image/tp9.jpg";
+                                    srcAttr[9] = "../assets/image/tp10.jpg";
 
                                     const img = document.createElement('img')
                                     img.setAttribute('class', 'img-fluid')

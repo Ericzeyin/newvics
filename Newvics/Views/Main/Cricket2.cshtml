@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Cricket-Newvics</title>
+    <title>Cricket-NewVics</title>
     @Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
@@ -129,7 +129,7 @@
 <body id="page-top">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>Newvics</a>
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
             <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
                     type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-align-justify"></i>
@@ -221,7 +221,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div calss="container" style="text-align:left">
+                        <div calss="container" style="text-align:left;font-family:'Times New Roman', Times, serif">
                             <p>
                                 Stumps:<br>
                                 In cricket, the stumps are the three vertical posts that support the bails and form the wicket. Stumping or being stumped is a method of dismissing a batsman.
@@ -285,7 +285,7 @@
             <div class="card" style="margin-bottom:2%">
                 <div class="card-header">
                     <ul class="nav center nav-tabs card-header-tabs">
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Cricket", "Main")#part1"><h1>Basic skill</h1></a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Cricket", "Main")#part1"><h1>Basic skills</h1></a></li>
                         <li class="nav-item"><a class="nav-link active" href="#part1"><h1>Watch the Professionals</h1></a></li>
                     </ul>
                 </div>
@@ -299,8 +299,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h3>Skill Guide</h3>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Skill Guide</h3>
+                                            <h3 style="font-family:Calibri">
                                                 <a href="https://www.youtube.com/watch?v=Yk8bvI0dZa4" target="_blank">
                                                     • Batting<br>
                                                 </a>
@@ -336,8 +336,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h3>Cricket Highlight</h3>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Cricket Highlight</h3>
+                                            <h3 style="font-family:Calibri">
                                                 <a href="https://www.youtube.com/watch?v=qJCRnkHP0Z4" target="_blank">
                                                     • Pakistan Vs Australia 2019<br>
                                                 </a>
@@ -369,8 +369,8 @@
                                     </div>
                                     <div class="col-lg-6 order-lg-2">
                                         <div class="p-5">
-                                            <h3>Good Moment</h3>
-                                            <h3>
+                                            <h3 class="display-4" style="font-family:Calibri">Good Moment</h3>
+                                            <h3 style="font-family:Calibri">
                                                 <a href="https://www.youtube.com/watch?v=lNxo3T7_ojI" target="_blank">
                                                     • Top 10 Most Emotional Moments in Cricket History<br>
                                                 </a>
@@ -426,7 +426,6 @@
                                         <option value="Aberfeldie">Aberfeldie</option>
                                         <option value="Airport West">Airport West</option>
                                         <option value="Albanvale">Albanvale</option>
-                                        <option value="Albert Park">Albert Park</option>
                                         <option value="Albion">Albion</option>
                                         <option value="Alphington">Alphington</option>
                                         <option value="Altona Meadows">Altona Meadows</option>
@@ -999,12 +998,18 @@
                         //    img.setAttribute('src', '../assets/image/u1.jpg')
                         //    box.appendChild(img)
                         //}
-                        var n = parseInt(3 * Math.random())
+                        var n = parseInt(9 * Math.random())
                         var srcAttr = [];
-                        srcAttr[0] = "../assets/image/cl1.jpg";
-                        srcAttr[1] = "../assets/image/cl2.jpg";
-                        srcAttr[2] = "../assets/image/cl3.jpg";
-                        srcAttr[3] = "../assets/image/cr2.jpg";
+                        srcAttr[0] = "../assets/image/cp1.jpg";
+                        srcAttr[1] = "../assets/image/cp2.jpg";
+                        srcAttr[2] = "../assets/image/cp3.jpg";
+                        srcAttr[3] = "../assets/image/cp4.jpg";
+                        srcAttr[4] = "../assets/image/cp5.jpg";
+                        srcAttr[5] = "../assets/image/cp6.jpg";
+                        srcAttr[6] = "../assets/image/cp7.jpg";
+                        srcAttr[7] = "../assets/image/cp8.jpg";
+                        srcAttr[8] = "../assets/image/cp9.jpg";
+                        srcAttr[9] = "../assets/image/cp10.jpg";
 
                         const img = document.createElement('img')
                         img.setAttribute('class', 'img-fluid')
@@ -1129,12 +1134,18 @@
                                     //    img.setAttribute('src', '../assets/image/u1.jpg')
                                     //    box.appendChild(img)
                                     //}
-                                    var n = parseInt(3 * Math.random())
+                                    var n = parseInt(9 * Math.random())
                                     var srcAttr = [];
-                                    srcAttr[0] = "../assets/image/cl1.jpg";
-                                    srcAttr[1] = "../assets/image/cl2.jpg";
-                                    srcAttr[2] = "../assets/image/cl3.jpg";
-                                    srcAttr[3] = "../assets/image/cr2.jpg";
+                                    srcAttr[0] = "../assets/image/cp1.jpg";
+                                    srcAttr[1] = "../assets/image/cp2.jpg";
+                                    srcAttr[2] = "../assets/image/cp3.jpg";
+                                    srcAttr[3] = "../assets/image/cp4.jpg";
+                                    srcAttr[4] = "../assets/image/cp5.jpg";
+                                    srcAttr[5] = "../assets/image/cp6.jpg";
+                                    srcAttr[6] = "../assets/image/cp7.jpg";
+                                    srcAttr[7] = "../assets/image/cp8.jpg";
+                                    srcAttr[8] = "../assets/image/cp9.jpg";
+                                    srcAttr[9] = "../assets/image/cp10.jpg";
 
                                     const img = document.createElement('img')
                                     img.setAttribute('class', 'img-fluid')
