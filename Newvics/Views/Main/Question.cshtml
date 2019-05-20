@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <title>Questions</title>
-    @Styles.Render("~/Content/css")   
+    @Styles.Render("~/Content/css")
     @Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
     @Styles.Render("~/Content/semantic.css")
     @Styles.Render("~/Content/semantic.min.css")
@@ -20,201 +20,393 @@
     <!-- Custom styles for this template -->
     <link href="~/Vendor/custom/css/scrolling-nav.css" rel="stylesheet">
     <script>
-        $(document).ready(function () {
-            $("#question2").hide();
-            $("#question3").hide();
-            $("#question4").hide();
-            $("#question5").hide();
-            $("#result").hide();
 
-            $("#question1_next").click(function () {
-                $("#question1").hide()
-                $("#question2").show()
-            });
-
-            $("#question2_next").click(function () {
-                $("#question2").hide()
-                $("#question3").show()
-            });
-
-            $("#question3_next").click(function () {
-                $("#question3").hide()
-                $("#question4").show()
-            });
-
-            $("#question4_next").click(function () {
-                $("#question4").hide()
-                $("#question5").show()
-            });
-
-            $("#question5_next").click(function () {
-                $("#question5").hide()
-                $("#result").show()
-            });
-        });
+        var homes = [
+            {
+                "name": "Adelaide Football Club",
+                "state": "South Australia",
+                "mascot": "Bird",
+                "rank": 12,
+                "membership_count": "64739",
+                "revenue": "56660"
+            },
+            {
+                "name": "Brisbane Lions",
+                "state": "Queensland",
+                "mascot": "Cat",
+                "rank": 15,
+                "membership_count": "24867",
+                "revenue": "55623"
+            },
+            {
+                "name": "Carlton Football Club",
+                "state": "Victoria",
+                "mascot": "Other",
+                "rank": 18,
+                "membership_count": "56005",
+                "revenue": "62815"
+            },
+            {
+                "name": "Collingwood Football Club",
+                "state": "Victoria",
+                "mascot": "Bird",
+                "rank": 3,
+                "membership_count": "75507",
+                "revenue": "82074"
+            },
+            {
+                "name": "Essendon Football Club",
+                "state": "Victoria",
+                "mascot": "Bird",
+                "rank": 11,
+                "membership_count": "79319",
+                "revenue": "65093"
+            },
+            {
+                "name": "Fremantle Football Club",
+                "state": "Western Australia",
+                "mascot": "Other",
+                "rank": 14,
+                "membership_count": "55639",
+                "revenue": "58391"
+            },
+            {
+                "name": "Geelong Football Club",
+                "state": "Victoria",
+                "mascot": "Cat",
+                "rank": 8,
+                "membership_count": "63818",
+                "revenue": "63014"
+            },
+            {
+                "name": "Gold Coast Suns",
+                "state": "Queensland",
+                "mascot": "Other",
+                "rank": 17,
+                "membership_count": "12108",
+                "revenue": "40132"
+            },
+            {
+                "name": "Greater Western Sydney Giants",
+                "state": "New South Wales",
+                "mascot": "Other",
+                "rank": 7,
+                "membership_count": "25243",
+                "revenue": "43453"
+            },
+            {
+                "name": "Hawthorn Football Club",
+                "state": "Victoria",
+                "mascot": "Bird",
+                "rank": 4,
+                "membership_count": "80302",
+                "revenue": "75219"
+            },
+            {
+                "name": "Melbourne Football Club",
+                "state": "Victoria",
+                "mascot": "Other",
+                "rank": 5,
+                "membership_count": "44275",
+                "revenue": "56094"
+            },
+            {
+                "name": "North Melbourne Football Club",
+                "state": "Victoria",
+                "mascot": "Other",
+                "rank": 9,
+                "membership_count": "40789",
+                "revenue": "41000"
+            },
+            {
+                "name": "Port Adelaide Football Club",
+                "state": "South Australia",
+                "mascot": "Other",
+                "rank": 10,
+                "membership_count": "54386",
+                "revenue": "59006"
+            },
+            {
+                "name": "Richmond Football Club",
+                "state": "Victoria",
+                "mascot": "Cat",
+                "rank": 1,
+                "membership_count": "100726",
+                "revenue": "79778"
+            },
+            {
+                "name": "St Kilda Football Club",
+                "state": "Victoria",
+                "mascot": "Other",
+                "rank": 16,
+                "membership_count": "46301",
+                "revenue": "53864"
+            },
+            {
+                "name": "Sydney Swans",
+                "state": "New South Wales",
+                "mascot": "Bird",
+                "rank": 6,
+                "membership_count": "60934",
+                "revenue": "51902"
+            },
+            {
+                "name": "West Coast",
+                "state": "Western Australia",
+                "mascot": "Bird",
+                "rank": 2,
+                "membership_count": "80290",
+                "revenue": "86255"
+            },
+            {
+                "name": "Western Bulldogs",
+                "state": "Victoria",
+                "mascot": "Other",
+                "rank": 13,
+                "membership_count": "43246",
+                "revenue": "69661"
+            }
+        ];
 
         var aflTeamDict = {
-            "Richmond": 0,
-            "West Coast": 0,
-            "Collingwood": 0,
-            "Hawthorn": 0,
-            "Melbourne": 0,
-            "Sydney": 0,
-            "Greater Western Sydney": 0,
-            "Geelong": 0,
-            "North Melbourne": 0,
-            "Port Adelaide0": 0,
-            "Essendon": 0,
-            "Adelaide": 0,
-            "Western Bulldogs": 0,
-            "Fremantle": 0,
+            "Adelaide Football Club": 0,
             "Brisbane Lions": 0,
-            "St Kilda": 0,
-            "Gold Coast": 0,
-            "Carlton": 0
+            "Carlton Football Club": 0,
+            "Collingwood Football Club": 0,
+            "Essendon Football Club": 0,
+            "Fremantle Football Club": 0,
+            "Geelong Football Club": 0,
+            "Gold Coast Suns": 0,
+            "Greater Western Sydney Giants": 0,
+            "Hawthorn Football Club": 0,
+            "Melbourne Football Club": 0,
+            "North Melbourne Football Club": 0,
+            "Port Adelaide Football Club": 0,
+            "Richmond Football Club": 0,
+            "St Kilda Football Club": 0,
+            "Sydney Swans": 0,
+            "West Coast": 0,
+            "Western Bulldogs": 0
         }
 
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById("inputRequired1").style.display = 'none';
+            document.getElementById("inputRequired2").style.display = 'none';
+            document.getElementById("inputRequired3").style.display = 'none';
+            document.getElementById("inputRequired4").style.display = 'none';
+            document.getElementById("inputRequired5").style.display = 'none';
+            document.getElementById("question2").style.display = 'none';
+            document.getElementById("question3").style.display = 'none';
+            document.getElementById("question4").style.display = 'none';
+            document.getElementById("question5").style.display = 'none';
+            document.getElementById("result").style.display = 'none';
+        }, false);
+
+
         function question1(p1) {
-            if (p1 == 1) {
-                for (var i = 0; i <= 5; i++) {
-                    var keyName = Object.keys(aflTeamDict)[i]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
+
+            if (p1.length != 0) {
+                document.getElementById("question1").style.display = 'none';
+                document.getElementById("question2").style.display = '';
+
+                console.log("value:" + p1)
+                console.log("Length:" + p1.length)
+                var sortedARR = homes.sort(function (a, b) {
+                    return parseFloat(a.rank) - parseFloat(b.rank);
+                });
+
+                if (p1 == 1) {
+                    for (var i = 0; i <= 5; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                } else if (p1 == 2) {
+                    for (var i = 6; i <= 11; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                } else {
+                    for (var i = 12; i <= 17; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
                 }
-            } else if (p1 == 2) {
-                for (var i = 6; i <= 11; i++) {
-                    var keyName = Object.keys(aflTeamDict)[i]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                console.log(Object.values(aflTeamDict));
+                document.getElementById('clicked_button').value = '';
             } else {
-                for (var i = 12; i <= 17; i++) {
-                    var keyName = Object.keys(aflTeamDict)[i]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                document.getElementById("inputRequired1").style.display = '';
+                console.log("PLease select 1 option to proceed")
             }
-            console.log(Object.values(aflTeamDict));
         }
 
         function question2(p1) {
-            if (p1 == 1) {
-                var catArr = [0, 7, 14];
-                for (var i = 0; i < catArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[catArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
+
+            if (p1.length != 0) {
+                document.getElementById("question2").style.display = 'none';
+                document.getElementById("question3").style.display = '';
+
+                console.log("value:" + p1)
+                console.log("Length:" + p1.length)
+
+                if (p1 == 1) {
+                    var catArr = homes.filter(
+                        function (homes) { return homes.mascot == "Cat" }
+                    )
+
+                    for (var i = 0; i < catArr.length; i++) {
+                        aflTeamDict[catArr[i].name]++
+                    }
+                } else if (p1 == 2) {
+                    var birdArr = homes.filter(
+                        function (homes) { return homes.mascot == "Bird" }
+                    )
+
+                    for (var i = 0; i < birdArr.length; i++) {
+                        aflTeamDict[birdArr[i].name]++
+                    }
+                } else {
+                    var otherArr = homes.filter(
+                        function (homes) { return homes.mascot == "Other" }
+                    )
+
+                    for (var i = 0; i < otherArr.length; i++) {
+                        aflTeamDict[otherArr[i].name]++
+                    }
                 }
-            } else if (p1 == 2) {
-                var birdArr = [1, 2, 3, 10, 11]
-                for (var i = 0; i < birdArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[birdArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                console.log(Object.values(aflTeamDict));
+                document.getElementById('clicked_button').value = '';
             } else {
-                var otherArr = [4, 5, 6, 8, 9, 13, 15, 16, 17]
-                for (var i = 0; i < otherArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[otherArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                document.getElementById("inputRequired2").style.display = '';
+                console.log("PLease select 1 option to proceed")
             }
-            console.log(Object.values(aflTeamDict));
         }
 
         function question3(p1) {
-            if (p1 == 1) {
-                var celebArr = [0, 3, 1, 10, 2, 11]
-                for (var i = 0; i < celebArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[celebArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
+
+            if (p1.length != 0) {
+                document.getElementById("question3").style.display = 'none';
+                document.getElementById("question4").style.display = '';
+
+                console.log("value:" + p1)
+                console.log("Length:" + p1.length)
+
+                var sortedARR = homes.sort(function (a, b) {
+                    return parseFloat(b.membership_count) - parseFloat(a.membership_count);
+                });
+                /* console.log(sortedARR) */
+
+                if (p1 == 1) {
+                    for (var i = 0; i <= 5; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                } else if (p1 == 2) {
+                    for (var i = 6; i <= 11; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                } else {
+                    for (var i = 12; i <= 17; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
                 }
-            } else if (p1 == 2) {
-                var tvArr = [7, 5, 17, 13, 9, 15]
-                for (var i = 0; i < tvArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[tvArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                console.log(Object.values(aflTeamDict));
+                document.getElementById('clicked_button').value = '';
             } else {
-                var dramaArr = [4, 6, 8, 12, 14, 16]
-                for (var i = 0; i < dramaArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[dramaArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                document.getElementById("inputRequired3").style.display = '';
+                console.log("PLease select 1 option to proceed")
             }
-            console.log(Object.values(aflTeamDict));
         }
 
         function question4(p1) {
-            if (p1 == 1) {
-                var vicArr = [0, 3, 10, 2, 7, 17, 15, 4, 12, 8]
-                for (var i = 0; i < vicArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[vicArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
+
+            if (p1.length != 0) {
+                document.getElementById("question4").style.display = 'none';
+                document.getElementById("question5").style.display = '';
+
+                console.log("value:" + p1)
+                console.log("Length:" + p1.length)
+
+                if (p1 == 1) {
+                    var stateArr = homes.filter(
+                        function (homes) { return homes.state == "Victoria" }
+                    )
+
+                    for (var i = 0; i < stateArr.length; i++) {
+                        aflTeamDict[stateArr[i].name]++
+                    }
+                } else if (p1 == 2) {
+                    var stateArr = homes.filter(
+                        function (homes) { return homes.state == "Western Australia" }
+                    )
+
+                    for (var i = 0; i < stateArr.length; i++) {
+                        aflTeamDict[stateArr[i].name]++
+                    }
+                } else if (p1 == 3) {
+                    var stateArr = homes.filter(
+                        function (homes) { return homes.state == "South Australia" }
+                    )
+
+                    for (var i = 0; i < stateArr.length; i++) {
+                        aflTeamDict[stateArr[i].name]++
+                    }
+                } else if (p1 == 4) {
+                    var stateArr = homes.filter(
+                        function (homes) { return homes.state == "New South Wales" }
+                    )
+
+                    for (var i = 0; i < stateArr.length; i++) {
+                        aflTeamDict[stateArr[i].name]++
+                    }
+                } else {
+                    var stateArr = homes.filter(
+                        function (homes) { return homes.state == "Queensland" }
+                    )
+
+                    for (var i = 0; i < stateArr.length; i++) {
+                        aflTeamDict[stateArr[i].name]++
+                    }
                 }
-            } else if (p1 == 2) {
-                var waArr = [1, 13]
-                for (var i = 0; i < waArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[waArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
-            } else if (p1 == 3) {
-                var saArr = [9, 11]
-                for (var i = 0; i < saArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[saArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
-            } else if (p1 == 4) {
-                var nswArr = [5, 6]
-                for (var i = 0; i < nswArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[nswArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                console.log(Object.values(aflTeamDict));
+                document.getElementById('clicked_button').value = '';
             } else {
-                var queenArr = [14, 16]
-                for (var i = 0; i < queenArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[queenArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
+                document.getElementById("inputRequired4").style.display = '';
+                console.log("PLease select 1 option to proceed")
             }
-            console.log(Object.values(aflTeamDict));
         }
 
         function question5(p1) {
-            if (p1 == 1) {
-                var fdArr = [2, 3, 1, 10, 0, 17]
-                for (var i = 0; i < fdArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[fdArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
-            } else if (p1 == 2) {
-                var cdArr = [9, 7, 11, 13, 14, 4]
-                for (var i = 0; i < cdArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[cdArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
-            } else {
-                var ceArr = [5, 6, 8, 12, 15, 16]
-                for (var i = 0; i < ceArr.length; i++) {
-                    var keyName = Object.keys(aflTeamDict)[ceArr[i]]
-                    aflTeamDict[keyName]++
-                    console.log(aflTeamDict[keyName])
-                }
-            }
-            console.log(Object.values(aflTeamDict));
 
-            sortDict()
+            if (p1.length != 0) {
+                document.getElementById("question5").style.display = 'none';
+                document.getElementById("result").style.display = '';
+
+                console.log("value:" + p1)
+                console.log("Length:" + p1.length)
+
+                var sortedARR = homes.sort(function (a, b) {
+                    return parseFloat(b.revenue) - parseFloat(a.revenue);
+                });
+                /* console.log(sortedARR) */
+
+                if (p1 == 1) {
+                    for (var i = 0; i <= 5; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                } else if (p1 == 2) {
+                    for (var i = 6; i <= 11; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                } else {
+                    for (var i = 12; i <= 17; i++) {
+                        aflTeamDict[sortedARR[i].name]++
+                    }
+                }
+                console.log(Object.values(aflTeamDict));
+                document.getElementById('clicked_button').value = '';
+
+                sortDict()
+
+            } else {
+                document.getElementById("inputRequired5").style.display = '';
+                console.log("PLease select 1 option to proceed")
+            }
         }
 
         function sortDict() {
@@ -230,10 +422,51 @@
 
             // Create a new array with only the first 5 items
             console.log(items.slice(0, 1));
-
             var finalTeamName = items.slice(0, 1)
-
             document.getElementById("teamName").innerHTML = finalTeamName[0][0];
+
+            var elem = document.createElement("img");
+
+            if (finalTeamName[0][0] == "Adelaide Football Club") {
+                elem.setAttribute("src", "../../assets/image/image13.jpeg");
+            } else if (finalTeamName[0][0] == "Brisbane Lions") {
+                elem.setAttribute("src", "../../assets/image/image14.jpeg");
+            } else if (finalTeamName[0][0] == "Carlton Football Club") {
+                elem.setAttribute("src", "../../assets/image/image5.jpg");
+            } else if (finalTeamName[0][0] == "Collingwood Football Club") {
+                elem.setAttribute("src", "../../assets/image/image4.jpg");
+            } else if (finalTeamName[0][0] == "Essendon Football Club") {
+                elem.setAttribute("src", "../../assets/image/image7.jpg");
+            } else if (finalTeamName[0][0] == "Fremantle Football Club") {
+                elem.setAttribute("src", "../../assets/image/image21.png");
+            } else if (finalTeamName[0][0] == "Geelong Football Club") {
+                elem.setAttribute("src", "../../assets/image/image1.jpg");
+            } else if (finalTeamName[0][0] == "Gold Coast Suns") {
+                elem.setAttribute("src", "../../assets/image/image20.png");
+            } else if (finalTeamName[0][0] == "Greater Western Sydney Giants") {
+                elem.setAttribute("src", "../../assets/image/image15.jpeg");
+            } else if (finalTeamName[0][0] == "Hawthorn Football Club") {
+                elem.setAttribute("src", "../../assets/image/image2.jpg");
+            } else if (finalTeamName[0][0] == "Melbourne Football Club") {
+                elem.setAttribute("src", "../../assets/image/image9.jpg");
+            } else if (finalTeamName[0][0] == "North Melbourne Football Club") {
+                elem.setAttribute("src", "../../assets/image/image16.jpeg");
+            } else if (finalTeamName[0][0] == "Port Adelaide Football Club") {
+                elem.setAttribute("src", "../../assets/image/image17.jpeg");
+            } else if (finalTeamName[0][0] == "Richmond Football Club") {
+                elem.setAttribute("src", "../../assets/image/image3.jpg");
+            } else if (finalTeamName[0][0] == "St Kilda Football Club") {
+                elem.setAttribute("src", "../../assets/image/image10.jpg");
+            } else if (finalTeamName[0][0] == "Sydney Swans") {
+                elem.setAttribute("src", "../../assets/image/image18.jpeg");
+            } else if (finalTeamName[0][0] == "West Coast") {
+                elem.setAttribute("src", "../../assets/image/image19.jpeg");
+            } else {
+                elem.setAttribute("src", "../../assets/image/image8.jpg");
+            }
+
+            elem.setAttribute("height", "300px");
+            document.getElementById("placehere").appendChild(elem);
         }
 
         function buttonClick(p1) {
@@ -245,85 +478,6 @@
     <style>
         .ui.black.button:focus {
             background-color: #284d96;
-        }
-
-        .testContainer {
-            position: relative;
-        }
-
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted grey;
-            color: #005050;
-        }
-
-            .tooltip .tooltiptext {
-                visibility: hidden;
-                position: absolute;
-                width: 180px;
-                background-color: #555;
-                color: #fff;
-                text-align: center;
-                padding: 2px;
-                border-radius: 5px;
-                z-index: 1;
-                opacity: 0;
-                transition: opacity .6s;
-            }
-
-            .tooltip:hover .tooltiptext {
-                visibility: visible;
-                opacity: 1;
-            }
-
-        .helmet {
-            position: absolute;
-            top: 8px;
-            right: 226px;
-            font-size: 18px;
-            z-index: 2;
-        }
-
-        .gloves {
-            position: absolute;
-            top: 75px;
-            right: 240px;
-            font-size: 18px;
-        }
-
-        .bat {
-            position: absolute;
-            top: 125px;
-            left: 250px;
-            font-size: 18px;
-        }
-
-        .ball {
-            position: absolute;
-            bottom: 120px;
-            left: 109px;
-            font-size: 18px;
-        }
-
-        .stumps {
-            position: absolute;
-            bottom: 100px;
-            left: 282px;
-            font-size: 18px;
-        }
-
-        .pads {
-            position: absolute;
-            bottom: 50px;
-            right: 180px;
-            font-size: 18px;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            z-index: -1;
         }
     </style>
 </head>
@@ -349,17 +503,21 @@
         </div>
     </nav>
     <div calss="container text-center">
+
         @*Ranking*@
         <div class="ui segment" id="question1" style="margin-top: 100px; margin-bottom: 100px;">
             <div class="ui two column very relaxed grid">
                 <div class="ui column centered grid">
                     <div class="image" style="margin-bottom: 20px;">
-                        <img src="~/Content/Images/question1.png" style="height: 300px;">
+                        <img src="~/Content/Images/question1.jpeg" style="height: 300px;">
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui center aligned container">
-                        <p style="font-size: 200%; color: black;">What is winnnig for you.?</p>
+                        <p style="font-size: 200%; color: black;">Winning is?</p>
+                    </div>
+                    <div id="inputRequired1" class="ui center aligned container">
+                        <p style="color: red;">Select one of the option to proceed ahead.</p>
                     </div>
                     <div class="ui column centered grid">
                         <div class="ui vertical buttons" style="margin-top: 50px;">
@@ -385,17 +543,20 @@
             <div class="ui two column very relaxed grid">
                 <div class="ui column centered grid">
                     <div class="image" style="margin-bottom: 20px;">
-                        <img src="~/Content/Images/question2.jpg" style="height: 300px;">
+                        <img src="~/Content/Images/question2.jpeg" style="height: 300px;">
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui center aligned container">
-                        <p style="font-size: 200%; color: black;">Which animal do you prefer.?</p>
+                        <p style="font-size: 200%; color: black;">Which animal do you prefer?</p>
+                    </div>
+                    <div id="inputRequired2" class="ui center aligned container">
+                        <p style="color: red;">Select one of the option to proceed ahead.</p>
                     </div>
                     <div class="ui column centered grid">
                         <div class="ui vertical buttons" style="margin-top: 50px;">
-                            <button onclick="buttonClick(1)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Cats</button>
-                            <button onclick="buttonClick(2)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Birds</button>
+                            <button onclick="buttonClick(1)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Cat</button>
+                            <button onclick="buttonClick(2)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Bird</button>
                             <button onclick="buttonClick(3)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Never Mind</button>
                         </div>
                     </div>
@@ -416,12 +577,15 @@
             <div class="ui two column very relaxed grid">
                 <div class="ui column centered grid">
                     <div class="image" style="margin-bottom: 20px;">
-                        <img src="~/Content/Images/question3 .jpg" style="height: 300px;">
+                        <img src="~/Content/Images/question3.jpeg" style="height: 300px;">
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui center aligned container">
-                        <p style="font-size: 200%; color: black;">What would you like to be.?</p>
+                        <p style="font-size: 200%; color: black;">Which one would you like the most?</p>
+                    </div>
+                    <div id="inputRequired3" class="ui center aligned container">
+                        <p style="color: red;">Select one of the option to proceed ahead.</p>
                     </div>
                     <div class="ui column centered grid">
                         <div class="ui vertical buttons" style="margin-top: 50px;">
@@ -447,12 +611,15 @@
             <div class="ui two column very relaxed grid">
                 <div class="ui column centered grid">
                     <div class="image" style="margin-bottom: 20px;">
-                        <img src="~/Content/Images/question4.jpg" style="height: 300px; margin-top: 50px;">
+                        <img src="~/Content/Images/question4.jpeg" style="height: 300px; margin-top: 50px;">
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui center aligned container">
-                        <p style="font-size: 200%; color: black;">Which state do you like.?</p>
+                        <p style="font-size: 200%; color: black;">Which state do you like more?</p>
+                    </div>
+                    <div id="inputRequired4" class="ui center aligned container">
+                        <p style="color: red;">Select one of the option to proceed ahead.</p>
                     </div>
                     <div class="ui column centered grid">
                         <div class="ui vertical buttons" style="margin-top: 50px;">
@@ -480,18 +647,21 @@
             <div class="ui two column very relaxed grid">
                 <div class="ui column centered grid">
                     <div class="image" style="margin-bottom: 20px;">
-                        <img src="~/Content/Images/question5.jpg" style="height: 300px;">
+                        <img src="~/Content/Images/question5.jpeg" style="height: 300px;">
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui center aligned container">
-                        <p style="font-size: 200%; color: black;">Select a place to dine</p>
+                        <p style="font-size: 200%; color: black;">Select a place to dine?</p>
+                    </div>
+                    <div id="inputRequired5" class="ui center aligned container">
+                        <p style="color: red;">Select one of the option to proceed ahead.</p>
                     </div>
                     <div class="ui column centered grid">
                         <div class="ui vertical buttons" style="margin-top: 50px;">
                             <button onclick="buttonClick(1)" class="ui toggle black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Fine dinning</button>
                             <button onclick="buttonClick(2)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Casual dining</button>
-                            <button onclick="buttonClick(3)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Cheap eats :D</button>
+                            <button onclick="buttonClick(3)" class="ui black button" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">Cheap eats</button>
                         </div>
                         <div class="ui center aligned container">
                             <button onclick="question5(document.getElementById('clicked_button').value)" class="ui button" id="question5_next" style="margin-bottom: 20px;padding-left: 50px;padding-right: 50px;">
@@ -506,23 +676,24 @@
             </div>
         </div>
 
-        @*Revenue*@
+        @*Result*@
         <div class="ui segment" id="result" style="margin-top: 100px; margin-bottom: 100px;">
             <div class="ui two column very relaxed grid">
                 <div class="ui column centered grid">
-                    <div class="image" style="margin-bottom: 20px;">
-                        <img src="~/Content/Images/afl.jpg" style="height: 300px;">
+                    <div id="placehere" class="image" style="margin-bottom: 20px;">
+
                     </div>
                 </div>
                 <div class="column">
                     <div class="ui center aligned container">
-                        <p style="font-size: 200%; color: black;">Congratulation!</p>
+                        <p style="font-size: 200%; color: black;">Congratulations!</p>
                     </div>
                     <div class="ui center aligned container">
                         <p style="font-size: 200%; color: black;">You are best suitable for: </p>
                     </div>
+                    <br /><br />
                     <div class="ui center aligned container">
-                        <p id="teamName" style="font-size: 200%; color: black;"></p>
+                        <p id="teamName" style="font-style: italic; font-size: 200%; color: black;"></p>
                     </div>
                 </div>
             </div>
@@ -533,48 +704,11 @@
 
         <input type="hidden" name="clicked_button" id="clicked_button" value="" />
 
-        @*<div calss="container text-center">
-                <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
-            </div>*@
         <div class="row">
             <div class="col offset-lg-8 mx-auto text-center">
                 <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Index", "Ranks")#quiz">Go Back</a>
             </div>
         </div>
     </div>
-    @*<div class="testContainer">
-            <img src="https://i.postimg.cc/2jK9RvCb/Cricketer.jpg" alt="Cinque Terre" width="1000" height="300">
-            <div class="helmet tooltip">
-                .
-                <span class="tooltiptext">Helmet</span>
-            </div>
-
-            <div class="gloves tooltip">
-                *
-                <span class="tooltiptext">Glovest</span>
-            </div>
-
-            <div class="bat tooltip">
-                .
-                <span class="tooltiptext">Bat</span>
-            </div>
-
-            <div class="ball tooltip">
-                .
-                <span class="tooltiptext">Ball</span>
-            </div>
-
-            <div class="stumps tooltip">
-                .
-                <span class="tooltiptext">Stumps</span>
-            </div>
-
-            <div class="pads tooltip">
-                .
-                <span class="tooltiptext">Pads</span>
-            </div>
-
-        </div>*@
-
 </body>
 </html>

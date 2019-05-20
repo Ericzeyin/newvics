@@ -8,9 +8,21 @@ namespace Newvics.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string username,string password)
         {
-            return View();
+            if (username == "dvoyagers" && password == "abc123")
+            {
+                return RedirectToAction("Index", "Main");
+            }
+            else if (String.IsNullOrEmpty(username) && String.IsNullOrEmpty(password)) {             
+                return View();
+
+            }
+            else {
+                ViewData["Message"] = "Sorry, your username or password is not correct";
+                return View();
+            }
+           
         }
 
         public ActionResult About()
