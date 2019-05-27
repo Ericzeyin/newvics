@@ -1,26 +1,151 @@
-﻿<div class="col-sm-8 item">
-    <div class="ui placeholder segment">
-        <div class="ui two column stackable center aligned grid">
-            <div class="middle aligned row">
-                <div class="column">
-                    <div class="col-md-12 col-lg-8"><img class="img-fluid" src="../assets/img/image2.jpg" /></div>
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>onLine</title>
+    @Styles.Render("~/assets/game/css/base.css")
+    @Styles.Render("~/assets/game/css/onLine.css")
+    @Styles.Render("~/Content/semantic.css")
+    @Styles.Render("~/Content/semantic.min.css")
+    @Scripts.Render("~/assets/game/js/jquery.min.js")
+    @Scripts.Render("~/assets/game/js/onLine.js")
+    @Styles.Render("~/assets/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/assets/fonts/font-awesome.min.css")
+    @*<link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/onLine.css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/onLine.js"></script>*@
+    <script type="text/javascript">
+        $(function () {
+            var obj = $(".demo");
+            var size = obj.size();
+            for (var i = 0; i < size; i++) {
+                obj.eq(i).onLine({
+                    regainCanvas: true
+                });
+            }
+        });
+    </script>
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
+            <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
+                    type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-align-justify"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Index", "Ranks")">Footy</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="start" class="clean-block" style="margin-bottom:0px;margin-top:0px;padding-bottom:2%;padding-bottom:1%">
+
+        <div class="col offset-lg-8 mx-auto text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading" style="color:coral">Uconnection game</h2>
+                    </div>
                 </div>
-                <div class="column">
-                    <div calss="container text-center">
-                        <h2 class="mb-4">Are you interested?</h2>
-                        <a class="btn btn-light btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Sports", "Main")">Find sports!</a>
+            </div>
+            <div class="ui two column stackable center aligned grid">
+                <div class="middle aligned row">
+                    <div class="column">
+                        <div id="test" data-pair=5 class="demo pt10" style="float:left;">
+                            <div class="show cb">
+                                <div class="container" style="margin-bottom:1%;padding-bottom:1%">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="mx-auto service-box mt-5">
+                                                <div class="btn btn-danger">
+                                                    <div class="savePair" style="color:white">Answer</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="mx-auto service-box mt-5">
+                                                <div class="btn btn-danger">
+                                                    <div class="resetCanvasBtn" style="color:white">Reset</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="mx-auto service-box mt-5">
+                                                <div class="btn btn-danger">
+                                                    <div class="goBackBtn" style="color:white">Rollback</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-3 text-center">
+                                            <div class="mx-auto service-box mt-5">
+                                                <div class="btn btn-danger">
+                                                    <div class="getPair" style="color:white">Confirm</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="showleft">
+                                    <span class="showitem container text-center" data-id="L1"><img src="../assets/image/con1.jpg" style="width:100px;height:76.3px;" /></span>
+                                    <span class="showitem container text-center" data-id="L2"><img src="../assets/image/con2.jpg" style="width:100px;height:76.3px;" /></span>
+                                    <span class="showitem container text-center" data-id="L3"><img src="../assets/image/con3.jpg" style="width:100px;height:76.3px;" /></span>
+                                    <span class="showitem container text-center" data-id="L4"><img src="../assets/image/con4.jpg" style="width:100px;height:76.3px;" /></span>
+                                </div>
+                                <div class="showright">
+                                    <span class="showitem container text-center" data-id="R1"><img src="../assets/image/111.jpg" style="width:100px;height:76.3px;" /></span>
+                                    <span class="showitem container text-center" data-id="R2"><img src="../assets/image/112.jpg" style="width:100px;height:76.3px;" /></span>
+                                    <span class="showitem container text-center" data-id="R3"><img src="../assets/image/113.jpg" style="width:100px;height:76.3px;" /></span>
+                                    <span class="showitem container text-center" data-id="R4"><img src="../assets/image/114.jpg" style="width:100px;height:76.3px;" /></span>
+                                </div>
+                                <canvas class="canvas"></canvas>
+                                <canvas class="backcanvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div calss="container" style="text-align:left">
+                            <h3>Batsman</h3>
+                            <p>Batsman is a player who bats and tries to hit the ball and get runs. The batsman can be aggressive or defensive . In T20's or ODI's the batsman mostly play's aggressive and in test matches they mostly play defensive.</p>
+                            <h3>Bowler</h3>
+                            <p>
+                                Bowler is a player who bowls and tries to get the batsman out . A bowler can be spinner, fast bowler, or
+                                fast-mid bowler.
+                            </p>
+                            <h3>Fielder</h3>
+                            <p>Fielder is a player who fields and tries to save the ball from the boundary. Fielders have many places to field like mid-off, mid-on, 1st clip, and many more. If any of the fielder gets an injury then another fielder comes who is not playing and take's his place. That fielder is called sub-fielder. </p>
+                            <h3>Wicket-keeper</h3>
+                            <p>Wicket-keeper is a player who stands behind the wicket's and tries to catch the ball if the ball misses the stumps and come's back. Most wicket-keeper's mostly wicket-keep and bat. The wicket- keeper stands at different places like for spinners they stand at the front and for fast bowler they back. </p>
+                        </div>
+
+                        @*<div calss="container text-center">
+                        <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
+                    </div>*@
+                    </div>
+                </div>
+            </div>
+            <div calss="container" style="margin:0px;padding-top:0.5%">
+                <div class="row">
+                    <div class="col offset-lg-8 mx-auto text-center">
+                        <a class="btn btn-primary btn-xl sr-button" role="button" data-aos="zoom-in" data-aos-duration="400" data-aos-once="true" href="@Url.Action("Cricket", "Main")#start">Go Back</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        </section>
 
 
 
-
-
-
-
-
-
+</body>
+</html>

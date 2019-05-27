@@ -45,13 +45,39 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Server, Version=2.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Server.2.0.3\lib\net46\Microsoft.Azure.Mobile.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Server.Authentication, Version=2.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Server.Authentication.2.0.3\lib\net46\Microsoft.Azure.Mobile.Server.Authentication.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.30826.1200, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.3.308261200\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
     </Reference>
@@ -135,8 +161,39 @@
     <Compile Include="Controllers\APlace.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\RanksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FootyClub.cs">
+      <DependentUpon>Newvics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Newvics.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Newvics.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Newvics.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Newvics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Newvics.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Newvics.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Place.cs">
+      <DependentUpon>Newvics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rank.cs">
+      <DependentUpon>Newvics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sports.cs">
+      <DependentUpon>Newvics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Team.cs">
+      <DependentUpon>Newvics.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -148,8 +205,11 @@
     <Content Include="assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="assets\css\Highlight-Clean.css" />
+    <Content Include="assets\css\Login-Form-Dark.css" />
     <Content Include="assets\css\NMDIGbanner.css" />
+    <Content Include="assets\css\simple-line-icons.min.css" />
     <Content Include="assets\css\Simple-Slider.css" />
+    <Content Include="assets\css\Sports-StyleSheet.css" />
     <Content Include="assets\css\styles.css" />
     <Content Include="assets\css\styles1.css" />
     <Content Include="assets\css\Team-Boxed.css" />
@@ -157,6 +217,8 @@
     <Content Include="assets\css\Video-Parallax-Background-v2.css" />
     <Content Include="assets\fonts\font-awesome.min.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\ionicons.min.css" />
+    <Content Include="assets\fonts\ionicons.svg" />
     <Content Include="assets\game\css\base.css" />
     <Content Include="assets\game\css\onLine.css" />
     <Content Include="assets\game\images\1.png" />
@@ -169,9 +231,83 @@
     <Content Include="assets\image\112.jpg" />
     <Content Include="assets\image\113.jpg" />
     <Content Include="assets\image\114.jpg" />
+    <Content Include="assets\image\a.jpg" />
+    <Content Include="assets\image\a1.png" />
+    <Content Include="assets\image\a2.png" />
+    <Content Include="assets\image\a3.png" />
+    <Content Include="assets\image\b.jpg" />
+    <Content Include="assets\image\b1.jpg" />
+    <Content Include="assets\image\b2.jpg" />
+    <Content Include="assets\image\b3.jpg" />
+    <Content Include="assets\image\bl1.jpg" />
+    <Content Include="assets\image\bl2.jpg" />
+    <Content Include="assets\image\bl3.jpg" />
+    <Content Include="assets\image\bl4.jpg" />
+    <Content Include="assets\image\bp1.jpg" />
+    <Content Include="assets\image\bp10.jpg" />
+    <Content Include="assets\image\bp2.jpg" />
+    <Content Include="assets\image\bp3.jpg" />
+    <Content Include="assets\image\bp4.jpg" />
+    <Content Include="assets\image\bp5.jpg" />
+    <Content Include="assets\image\bp6.jpg" />
+    <Content Include="assets\image\bp7.jpg" />
+    <Content Include="assets\image\bp8.jpg" />
+    <Content Include="assets\image\bp9.jpg" />
+    <Content Include="assets\image\br1.jpg" />
+    <Content Include="assets\image\br2.jpg" />
+    <Content Include="assets\image\br3.jpg" />
+    <Content Include="assets\image\c.png" />
+    <Content Include="assets\image\cl1.jpg" />
+    <Content Include="assets\image\cl2.jpg" />
+    <Content Include="assets\image\cl3.jpg" />
+    <Content Include="assets\image\club1.jpg" />
+    <Content Include="assets\image\club2.jpg" />
+    <Content Include="assets\image\club3.jpg" />
+    <Content Include="assets\image\con1.jpg" />
+    <Content Include="assets\image\con2.jpg" />
+    <Content Include="assets\image\con3.jpg" />
+    <Content Include="assets\image\con4.jpg" />
+    <Content Include="assets\image\cp1.jpg" />
+    <Content Include="assets\image\cp10.jpg" />
+    <Content Include="assets\image\cp2.jpg" />
+    <Content Include="assets\image\cp3.jpg" />
+    <Content Include="assets\image\cp4.jpg" />
+    <Content Include="assets\image\cp5.jpg" />
+    <Content Include="assets\image\cp6.jpg" />
+    <Content Include="assets\image\cp7.jpg" />
+    <Content Include="assets\image\cp8.jpg" />
+    <Content Include="assets\image\cp9.jpg" />
+    <Content Include="assets\image\cr1.jpg" />
+    <Content Include="assets\image\cr2.jpg" />
+    <Content Include="assets\image\cr3.jpg" />
+    <Content Include="assets\image\d.png" />
+    <Content Include="assets\image\f1.jpg" />
+    <Content Include="assets\image\f2.jpg" />
+    <Content Include="assets\image\f3.jpg" />
+    <Content Include="assets\image\fp1.jpg" />
+    <Content Include="assets\image\fp10.jpg" />
+    <Content Include="assets\image\fp2.jpg" />
+    <Content Include="assets\image\fp3.jpg" />
+    <Content Include="assets\image\fp4.jpg" />
+    <Content Include="assets\image\fp5.jpg" />
+    <Content Include="assets\image\fp6.jpg" />
+    <Content Include="assets\image\fp7.jpg" />
+    <Content Include="assets\image\fp8.jpg" />
+    <Content Include="assets\image\fp9.jpg" />
     <Content Include="assets\image\image1.jpg" />
     <Content Include="assets\image\image10.jpg" />
+    <Content Include="assets\image\image11.jpg" />
+    <Content Include="assets\image\image12.jpg" />
+    <Content Include="assets\image\image13.jpeg" />
+    <Content Include="assets\image\image14.jpeg" />
+    <Content Include="assets\image\image15.jpeg" />
+    <Content Include="assets\image\image16.jpeg" />
+    <Content Include="assets\image\image17.jpeg" />
+    <Content Include="assets\image\image18.jpeg" />
+    <Content Include="assets\image\image19.jpeg" />
     <Content Include="assets\image\image2.jpg" />
+    <Content Include="assets\image\image20.png" />
+    <Content Include="assets\image\image21.png" />
     <Content Include="assets\image\image3.jpg" />
     <Content Include="assets\image\image4.jpg" />
     <Content Include="assets\image\image5.jpg" />
@@ -179,6 +315,35 @@
     <Content Include="assets\image\image7.jpg" />
     <Content Include="assets\image\image8.jpg" />
     <Content Include="assets\image\image9.jpg" />
+    <Content Include="assets\image\tennis1.jpg" />
+    <Content Include="assets\image\tennis1.png" />
+    <Content Include="assets\image\tennis2.jpg" />
+    <Content Include="assets\image\tennis3.jpg" />
+    <Content Include="assets\image\tennis4.jpg" />
+    <Content Include="assets\image\tennis5.jpg" />
+    <Content Include="assets\image\tennis6.jpg" />
+    <Content Include="assets\image\tl1.jpg" />
+    <Content Include="assets\image\tl2.jpg" />
+    <Content Include="assets\image\tl3.jpg" />
+    <Content Include="assets\image\tl4.jpg" />
+    <Content Include="assets\image\tp1.jpg" />
+    <Content Include="assets\image\tp10.jpg" />
+    <Content Include="assets\image\tp2.jpg" />
+    <Content Include="assets\image\tp3.jpg" />
+    <Content Include="assets\image\tp4.jpg" />
+    <Content Include="assets\image\tp5.jpg" />
+    <Content Include="assets\image\tp6.jpg" />
+    <Content Include="assets\image\tp7.jpg" />
+    <Content Include="assets\image\tp8.jpg" />
+    <Content Include="assets\image\tp9.jpg" />
+    <Content Include="assets\image\tr1.jpg" />
+    <Content Include="assets\image\tr2.jpg" />
+    <Content Include="assets\image\tr3.jpg" />
+    <Content Include="assets\image\u1.jpg" />
+    <Content Include="assets\image\u2.jpg" />
+    <Content Include="assets\image\u3.jpg" />
+    <Content Include="assets\image\u4.jpg" />
+    <Content Include="assets\img\abc1.png" />
     <Content Include="assets\img\avatar.jpg" />
     <Content Include="assets\img\avatar1.png" />
     <Content Include="assets\img\bg1.jpg" />
@@ -203,6 +368,8 @@
     <Content Include="assets\img\slider1.jpg" />
     <Content Include="assets\img\slider2.jpg" />
     <Content Include="assets\img\slider3.jpg" />
+    <Content Include="assets\img\slider4.jpg" />
+    <Content Include="assets\img\star-sky.jpg" />
     <Content Include="assets\img\team1.jpg" />
     <Content Include="assets\img\team2.jpg" />
     <Content Include="assets\img\team3.jpg" />
@@ -217,6 +384,7 @@
     <Content Include="assets\img\thumbnails\craket.jpg" />
     <Content Include="assets\img\thumbnails\footy.jpg" />
     <Content Include="assets\img\thumbnails\tennis.jpg" />
+    <Content Include="assets\img\u4.jpg" />
     <Content Include="assets\js\myjs.js" />
     <Content Include="assets\js\bs-animation.js" />
     <Content Include="assets\js\creative.js" />
@@ -367,6 +535,12 @@
     <Content Include="Content\components\visibility.min.js" />
     <Content Include="Content\components\visit.js" />
     <Content Include="Content\components\visit.min.js" />
+    <Content Include="Content\Images\afl.jpg" />
+    <Content Include="Content\Images\question1.jpeg" />
+    <Content Include="Content\Images\question2.jpeg" />
+    <Content Include="Content\Images\question3.jpeg" />
+    <Content Include="Content\Images\question4.jpeg" />
+    <Content Include="Content\Images\question5.jpeg" />
     <Content Include="Content\semantic.css" />
     <Content Include="Content\semantic.min.css" />
     <Content Include="Content\themes\basic\assets\fonts\icons.svg" />
@@ -376,6 +550,47 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\Newvics.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Newvics.Context.cs</LastGenOutput>
+      <DependentUpon>Newvics.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Newvics.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Newvics.edmx</DependentUpon>
+      <LastGenOutput>Newvics.cs</LastGenOutput>
+    </Content>
+    <Content Include="resource\bootstrap\css\bootstrap.min.css" />
+    <Content Include="resource\bootstrap\js\bootstrap.min.js" />
+    <Content Include="resource\fonts\font-awesome.min.css" />
+    <Content Include="resource\fonts\fontawesome-webfont.svg" />
+    <Content Include="resource\img\about\1.jpg" />
+    <Content Include="resource\img\about\2.jpg" />
+    <Content Include="resource\img\about\3.jpg" />
+    <Content Include="resource\img\about\4.jpg" />
+    <Content Include="resource\img\clients\creative-market.jpg" />
+    <Content Include="resource\img\clients\designmodo.jpg" />
+    <Content Include="resource\img\clients\envato.jpg" />
+    <Content Include="resource\img\clients\themeforest.jpg" />
+    <Content Include="resource\img\header-bg.jpg" />
+    <Content Include="resource\img\map-image.png" />
+    <Content Include="resource\img\portfolio\1-full.jpg" />
+    <Content Include="resource\img\portfolio\1-thumbnail.jpg" />
+    <Content Include="resource\img\portfolio\2-full.jpg" />
+    <Content Include="resource\img\portfolio\2-thumbnail.jpg" />
+    <Content Include="resource\img\portfolio\3-full.jpg" />
+    <Content Include="resource\img\portfolio\3-thumbnail.jpg" />
+    <Content Include="resource\img\portfolio\4-full.jpg" />
+    <Content Include="resource\img\portfolio\4-thumbnail.jpg" />
+    <Content Include="resource\img\portfolio\5-full.jpg" />
+    <Content Include="resource\img\portfolio\5-thumbnail.jpg" />
+    <Content Include="resource\img\portfolio\6-full.jpg" />
+    <Content Include="resource\img\portfolio\6-thumbnail.jpg" />
+    <Content Include="resource\img\team\1.jpg" />
+    <Content Include="resource\img\team\2.jpg" />
+    <Content Include="resource\img\team\3.jpg" />
+    <Content Include="resource\js\agency.js" />
+    <Content Include="resource\js\jquery.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\fonts\fontawesome-webfont.eot" />
@@ -391,7 +606,22 @@
     <Content Include="Content\themes\basic\assets\fonts\icons.woff" />
     <Content Include="Content\themes\basic\assets\fonts\icons.ttf" />
     <Content Include="Content\themes\basic\assets\fonts\icons.eot" />
+    <EntityDeploy Include="Models\Newvics.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Newvics.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Newvics.edmx.diagram">
+      <DependentUpon>Newvics.edmx</DependentUpon>
+    </Content>
+    <Content Include="assets\fonts\ionicons.eot" />
+    <Content Include="assets\fonts\ionicons.ttf" />
+    <Content Include="assets\fonts\ionicons.woff" />
     <None Include="Properties\PublishProfiles\Newvics - Web Deploy.pubxml" />
+    <Content Include="resource\fonts\fontawesome-webfont.eot" />
+    <Content Include="resource\fonts\fontawesome-webfont.ttf" />
+    <Content Include="resource\fonts\fontawesome-webfont.woff" />
+    <Content Include="resource\fonts\fontawesome-webfont.woff2" />
+    <Content Include="resource\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -405,6 +635,21 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\semantic.js" />
     <Content Include="Scripts\semantic.min.js" />
+    <Content Include="Vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Vendor\custom\css\scrolling-nav.css" />
+    <Content Include="Vendor\custom\js\scrolling-nav.js" />
+    <Content Include="Vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="Vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="Vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Vendor\jquery\jquery.js" />
+    <Content Include="Vendor\jquery\jquery.min.js" />
+    <Content Include="Vendor\jquery\jquery.slim.js" />
+    <Content Include="Vendor\jquery\jquery.slim.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -426,10 +671,30 @@
     <Content Include="Views\Main\Footy.cshtml" />
     <Content Include="Views\Main\Basketball.cshtml" />
     <Content Include="Views\Main\Test.cshtml" />
+    <Content Include="Views\Main\Footy2.cshtml" />
+    <Content Include="Views\Main\Footy3.cshtml" />
+    <Content Include="Views\Main\Cricket.cshtml" />
+    <Content Include="Views\Main\Tennis.cshtml" />
+    <Content Include="Views\Main\Basketball2.cshtml" />
+    <Content Include="Views\Main\Cricket2.cshtml" />
+    <Content Include="Views\Main\Tennis2.cshtml" />
+    <Content Include="Views\Main\Question.cshtml" />
+    <Content Include="Vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Vendor\jquery\jquery.min.map" />
+    <Content Include="Vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Views\Main\Tennis3.cshtml" />
+    <Content Include="Views\Ranks\Details.cshtml" />
+    <Content Include="Views\Ranks\Index.cshtml" />
+    <Content Include="Views\Main\Basketballc1.cshtml" />
+    <Content Include="Views\Main\Basketballc2.cshtml" />
+    <Content Include="Views\Main\Basketballc3.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -442,6 +707,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

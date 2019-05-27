@@ -1,2 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters />
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:newvics.database.windows.net,1433;Initial Catalog=Newvics_db;Persist Security Info=False;User ID=zxio0007;Password=Huainian718693;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Eric\\source\\repos\\Newvics\\Newvics\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Newvics_dbEntities-Web.config Connection String" description="Newvics_dbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Newvics.csdl|res://*/Models.Newvics.ssdl|res://*/Models.Newvics.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:newvics.database.windows.net,1433;initial catalog=Newvics_db;persist security info=False;user id=zxio0007;password=Huainian718693;multipleactiveresultsets=False;connect timeout=30;encrypt=True;trustservercertificate=False;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Eric\\source\\repos\\Newvics\\Newvics\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Newvics_dbEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Newvics_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FootyClub">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mascot" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Membership_count" Type="int" />
+    <Property Name="Revenue" Type="int" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Latitude" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="Longitude" Type="decimal" Precision="18" Scale="8" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Adress" Type="nvarchar(max)" />
+    <Property Name="Rating" Type="decimal" Precision="18" Scale="1" />
+    <Property Name="Photo_reference" Type="nvarchar(max)" />
+    <Property Name="Total_rating_people" Type="int" />
+    <Property Name="Other" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rank">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Teamid" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rank" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Image" Type="nvarchar" MaxLength="10" />
+    <Property Name="Video_link" Type="nvarchar(max)" />
+    <Property Name="Participate_n" Type="int" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Rank_ToTeam">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Rank" Type="Self.Rank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rank">
+        <PropertyRef Name="Teamid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToSports">
+    <End Role="Sports" Type="Self.Sports" Multiplicity="0..1" />
+    <End Role="Place" Type="Self.Place" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Place">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Newvics_dbModelStoreContainer">
+    <EntitySet Name="FootyClub" EntityType="Self.FootyClub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rank" EntityType="Self.Rank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sports" EntityType="Self.Sports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Rank_ToTeam" Association="Self.FK_Rank_ToTeam">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Rank" EntitySet="Rank" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToSports" Association="Self.FK_Table_ToSports">
+      <End Role="Sports" EntitySet="Sports" />
+      <End Role="Place" EntitySet="Place" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

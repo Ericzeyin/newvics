@@ -24,8 +24,8 @@
         }
 
         .footer {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
             background-color: #2c3e50;
             color: #fff
         }
@@ -42,43 +42,43 @@
     </style>
 </head>
 
-    <body id="page-top">
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
-                <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
-                        type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-align-justify"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Index", "Ranks")">Footy</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
-                        @*<li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>*@
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="simple-slider">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url('../assets/img/slider1.jpg');"></div>
-                    <div class="swiper-slide" style="background-image:url('../assets/img/slider2.jpg');"></div>
-                    <div class="swiper-slide" style="background-image:url('../assets/img/slider3.jpg');"></div>
-                    <div class="swiper-slide" style="background-image:url('../assets/img/slider4.jpg');"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="@Url.Action("Index", "Main")"><i class="home icon"></i>NewVics</a>
+            <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right"
+                    type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-align-justify"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Sports", "Main")">Sports</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Index", "Ranks")">Footy</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Cricket", "Main")">Cricket</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Basketball", "Main")">Basketball</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="@Url.Action("Tennis", "Main")">Tennis</a></li>
+                    @*<li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>*@
+                </ul>
             </div>
         </div>
+    </nav>
 
-        <section style="padding-bottom:5%;padding-top:5%;background-color:aliceblue">
-            <div class="container">
+    <div class="simple-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url('../assets/img/slider1.jpg');"></div>
+                <div class="swiper-slide" style="background-image:url('../assets/img/slider2.jpg');"></div>
+                <div class="swiper-slide" style="background-image:url('../assets/img/slider3.jpg');"></div>
+                <div class="swiper-slide" style="background-image:url('../assets/img/slider4.jpg');"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <section style="padding-bottom:5%;padding-top:5%;background-color:aliceblue">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Top sports in Victoria</h2>
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="mx-auto service-box mt-5">
-                       <h2 id="odometer3" class="odometer">111</h2>
+                        <h2 id="odometer3" class="odometer">111</h2>
                         <p class="text-muted mb-0">Teenagers choose: </p>
                         <h3 class="mb-3">Basketball</h3>
                         <div class="hovereffect">
@@ -146,93 +146,84 @@
                 </div>
             </div>
         </div>
-      
 
-            @*<div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="../assets/img/thumbnails/footy.jpg" width="270px" height="200px">
-                        <div class="overlay">
-                            <h2>Sports</h2>
-                            <a class="info" href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="../assets/img/thumbnails/craket.jpg" width="270px" height="200px">
-                        <div class="overlay">
-                            <h2>Sports</h2>
-                            <a class="info" href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="../assets/img/thumbnails/basketball.jpg" width="270px" height="200px">
-                        <div class="overlay">
-                            <h2>Sports</h2>
-                            <a class="info" href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="../assets/img/thumbnails/tennis.jpg" width="270px" height="200px">
-                        <div class="overlay">
-                            <h2>Sports</h2>
-                            <a class="info" href="#">Explore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>*@
-        </section>
 
-        <footer class="footer text-center">
-            <div class="container">
+        @*<div class="container">
                 <div class="row">
-                    <div class="col-md-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p>Monash University<br>Caulfield East, Vic 3145</p>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="../assets/img/thumbnails/footy.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Sports</h2>
+                                <a class="info" href="#">Explore</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase">Around the Web</h4>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" @*href="#"*@><i class="fa fa-facebook fa-fw"></i></a></li>
-                            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" @*href="#"*@><i class="fa fa-google-plus fa-fw"></i></a></li>
-                            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" @*href="#"*@><i class="fa fa-twitter fa-fw"></i></a></li>
-                            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle" role="button" @*href="#"*@><i class="fa fa-dribbble fa-fw"></i></a></li>
-                        </ul>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="../assets/img/thumbnails/craket.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Sports</h2>
+                                <a class="info" href="#">Explore</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <h4 class="text-uppercase mb-4">About Us</h4>
-                        <p class="lead mb-0"><span><a href="https://mahara.infotech.monash.edu.au/mahara/view/view.php?id=28236" target="_blank">D-Voyagers.&nbsp;</a></span></p>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="../assets/img/thumbnails/basketball.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Sports</h2>
+                                <a class="info" href="#">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-3">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="../assets/img/thumbnails/tennis.jpg" width="270px" height="200px">
+                            <div class="overlay">
+                                <h2>Sports</h2>
+                                <a class="info" href="#">Explore</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>*@
+    </section>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p>Monash University<br>Caulfield East, Vic 3145</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="text-uppercase mb-4">About Us</h4>
+                    <p class="lead mb-0"><span><a class="btn btn-outline-light btn-social text-center" href="@Url.Action("About", "Home")">D-Voyagers&nbsp;</a></span></p>
+                </div>
             </div>
-            <p>&copy; @DateTime.Now.Year - Newvics</p>
-        </footer>
+        </div>
+        <p>&copy; @DateTime.Now.Year - Newvics</p>
+    </footer>
 
-        <script>
-            setTimeout(function () {
-                odometer1.innerHTML = 182852;
-                odometer2.innerHTML = 109822;
-                odometer3.innerHTML = 21844;
-                odometer4.innerHTML = 8771;
-            }, 1000);
-        </script>
+    <script>
+        setTimeout(function () {
+            odometer1.innerHTML = 182852;
+            odometer2.innerHTML = 109822;
+            odometer3.innerHTML = 21844;
+            odometer4.innerHTML = 8771;
+        }, 1000);
+    </script>
 
-        @Scripts.Render("~/assets/js/jquery.min.js")
-        @Scripts.Render("~/assets/bootstrap/js/bootstrap.min.js")
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-        @Scripts.Render("~/assets/js/creative.js")
-        @Scripts.Render("~/assets/js/bs-animation.js")
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-        @Scripts.Render("~/assets/js/Simple-Slider.js")
-        <script src="https://github.hubspot.com/odometer/odometer.js"></script>
-    </body>
+    @Scripts.Render("~/assets/js/jquery.min.js")
+    @Scripts.Render("~/assets/bootstrap/js/bootstrap.min.js")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    @Scripts.Render("~/assets/js/creative.js")
+    @Scripts.Render("~/assets/js/bs-animation.js")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+    @Scripts.Render("~/assets/js/Simple-Slider.js")
+    <script src="https://github.hubspot.com/odometer/odometer.js"></script>
+</body>
 </html>
